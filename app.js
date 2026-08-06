@@ -24,27 +24,115 @@
 
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    '.hero__content, .hero__visual, .slider, .bento__hero, .bento__card, .doctor, .price-accordion, .price-card, .section__head, .contact__intro, .form'
+    '.slider, .bento__hero, .bento__card, .doctor, .doctor-mini, .blog-cta, .prices-accordion__item, .section__head, .contact__intro, .form, .prices-group'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
+
+  // Каскадні затримки для елементів у одному контейнері
+  const cascadeContainers = [
+    '.bento__grid', '.doctors', '.doctors-compact', '.prices-accordion'
+  ];
+  cascadeContainers.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((container) => {
+      let idx = 0;
+      Array.from(container.children).forEach((child) => {
+        if (child.classList.contains('reveal')) {
+          child.style.setProperty('--i', idx);
+          child.classList.add('reveal--cascade');
+          idx++;
+        }
+      });
+    });
+  });
 
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const target = entry.target;
-            setTimeout(() => target.classList.add('is-in'), i * 60);
-            io.unobserve(target);
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
           }
         });
       },
-      { rootMargin: '0px 0px -10% 0px', threshold: 0.06 }
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
     );
     revealTargets.forEach((el) => io.observe(el));
   } else {
     revealTargets.forEach((el) => el.classList.add('is-in'));
   }
+
+  /* ---------- Number counter (hero stats) ---------- */
+  const counters = document.querySelectorAll('[data-count]');
+  const animateCount = (el) => {
+    const target = Number(el.dataset.count) || 0;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const startTime = performance.now();
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+    const step = (now) => {
+      const p = Math.min(1, (now - startTime) / duration);
+      el.textContent = Math.round(target * easeOut(p)) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window && counters.length) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          cio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach((el) => cio.observe(el));
+  }
+
+  /* ---------- Button ripple hover follow ---------- */
+  document.querySelectorAll('.btn').forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--x', ((e.clientX - r.left) / r.width * 100) + '%');
+      btn.style.setProperty('--y', ((e.clientY - r.top)  / r.height * 100) + '%');
+    });
+  });
+
+  /* ---------- Smooth accordion open/close ---------- */
+  document.querySelectorAll('.prices-accordion__item').forEach((item) => {
+    const summary = item.querySelector('summary');
+    const body = item.querySelector('.prices-accordion__body');
+    if (!summary || !body) return;
+
+    summary.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = item.hasAttribute('open');
+
+      if (isOpen) {
+        // Закриваємо: спочатку встановити явну висоту, потім 0
+        body.style.height = body.scrollHeight + 'px';
+        // force reflow
+        void body.offsetHeight;
+        body.style.height = '0px';
+        body.addEventListener('transitionend', function onEnd() {
+          item.removeAttribute('open');
+          body.removeEventListener('transitionend', onEnd);
+        }, { once: true });
+      } else {
+        // Відкриваємо
+        item.setAttribute('open', '');
+        body.style.height = '0px';
+        void body.offsetHeight;
+        body.style.height = body.scrollHeight + 'px';
+        body.addEventListener('transitionend', function onEnd() {
+          body.style.height = 'auto';
+          body.removeEventListener('transitionend', onEnd);
+        }, { once: true });
+      }
+    });
+  });
+
+  /* ---------- Smooth in-page nav ---------- */
 
   /* ---------- Services Slider ---------- */
   const slider = document.getElementById('servicesSlider');
@@ -54,22 +142,43 @@
     const prev = slider.querySelector('.slider__btn--prev');
     const next = slider.querySelector('.slider__btn--next');
     const dots = slider.querySelectorAll('.slider__dot');
+    const progress = slider.querySelector('#sliderProgress');
+    const AUTO_MS = 7000;
     let index = 0;
     let autoTimer = null;
+    let progressRAF = null;
+    let progressStart = 0;
 
     function go(i) {
       index = (i + slides.length) % slides.length;
       track.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((d, k) => d.classList.toggle('is-active', k === index));
+      slides.forEach((s, k) => s.classList.toggle('is-current', k === index));
+      restartProgress();
+    }
+
+    function restartProgress() {
+      if (!progress) return;
+      cancelAnimationFrame(progressRAF);
+      progressStart = performance.now();
+      progress.style.width = '0%';
+      const tick = (now) => {
+        const p = Math.min(1, (now - progressStart) / AUTO_MS);
+        progress.style.width = (p * 100) + '%';
+        if (p < 1) progressRAF = requestAnimationFrame(tick);
+      };
+      progressRAF = requestAnimationFrame(tick);
     }
 
     function startAuto() {
       stopAuto();
-      autoTimer = setInterval(() => go(index + 1), 6500);
+      autoTimer = setInterval(() => go(index + 1), AUTO_MS);
+      restartProgress();
     }
     function stopAuto() {
       if (autoTimer) clearInterval(autoTimer);
       autoTimer = null;
+      cancelAnimationFrame(progressRAF);
     }
 
     prev?.addEventListener('click', () => { go(index - 1); startAuto(); });
@@ -78,7 +187,7 @@
       go(Number(d.dataset.index)); startAuto();
     }));
 
-    // Swipe support (touch + mouse drag)
+    // Swipe support (touch)
     let startX = 0, dx = 0, dragging = false;
     const onDown = (x) => { dragging = true; startX = x; dx = 0; stopAuto(); };
     const onMove = (x) => { if (dragging) dx = x - startX; };
@@ -92,11 +201,9 @@
     slider.addEventListener('touchmove',  (e) => onMove(e.touches[0].clientX), { passive: true });
     slider.addEventListener('touchend',   onUp);
 
-    // Пауза автогорту, коли курсор над слайдером
     slider.addEventListener('mouseenter', stopAuto);
     slider.addEventListener('mouseleave', startAuto);
 
-    // Клавіатура
     slider.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft')  { go(index - 1); startAuto(); }
       if (e.key === 'ArrowRight') { go(index + 1); startAuto(); }
