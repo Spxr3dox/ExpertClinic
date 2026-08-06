@@ -300,24 +300,22 @@
 
         <!--
           =======================================================================
-          GOOGLE FORM INTEGRATION
+          GOOGLE SHEETS INTEGRATION (через Google Apps Script Web App)
           =======================================================================
-          1) Створіть Google Form із 3 полями: Імʼя, Контакт, Що вас турбує.
-          2) Відкрийте pre-fill link: у формі → ⋮ → Get pre-filled link.
-             Заповніть будь-яким тестовим текстом, скопіюйте посилання.
-             Ви побачите параметри виду ?entry.1234567=...&entry.7654321=...
-          3) Замініть:
-             - data-form-action  →  URL відправки форми
-               (перетворіть у ".../formResponse":
-                https://docs.google.com/forms/d/e/FORM_ID/formResponse)
-             - атрибути name="entry.XXXXXXX" у кожному <input>/<textarea>
-               відповідно до ID полів вашої Google Form.
+          Дані з форми записуються у Google Sheet:
+          https://docs.google.com/spreadsheets/d/1kGuYMOE8h-fn1bqhUr2Kg0XpcwfZeVM3g9Q3N8R6Wsg/edit
+
+          🚩 ПОТРІБНО ЗАМІНИТИ АДРЕСУ ЕНДПОЙНТА ↓
+             У атрибуті data-endpoint встав URL вашого Apps Script Web App
+             (виглядає як https://script.google.com/macros/s/AKfycb.../exec).
+
+          Інструкція для отримання URL — див. docs/apps-script.gs у цьому репо.
           =======================================================================
         -->
         <form
           id="contactForm"
           class="form glass"
-          data-form-action="https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/formResponse"
+          data-endpoint="REPLACE_WITH_APPS_SCRIPT_URL"
           novalidate
         >
           <div class="form__row">
@@ -326,7 +324,7 @@
               class="form__input"
               type="text"
               id="fName"
-              name="entry.1111111111"
+              name="name"
               placeholder="Ваше імʼя"
               autocomplete="name"
               required
@@ -339,7 +337,7 @@
               class="form__input"
               type="text"
               id="fContact"
-              name="entry.2222222222"
+              name="contact"
               placeholder="+380… / @username / you@email.com"
               autocomplete="tel"
               required
@@ -351,7 +349,7 @@
             <textarea
               class="form__input form__input--area"
               id="fMessage"
-              name="entry.3333333333"
+              name="message"
               rows="4"
               placeholder="Коротко опишіть ваш запит…"
               required
@@ -367,9 +365,6 @@
             Натискаючи «Надіслати», ви погоджуєтесь із обробкою персональних даних.
           </p>
         </form>
-
-        <!-- Прихований iframe для async-надсилання без перезавантаження сторінки -->
-        <iframe name="hiddenGoogleFrame" id="hiddenGoogleFrame" style="display:none" title="hidden"></iframe>
       </div>
     </section>
   </main>

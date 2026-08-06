@@ -2,7 +2,7 @@
    Expert Clinic — Landing
    - Sticky header shadow on scroll
    - Reveal on scroll (IntersectionObserver)
-   - Google Form async submit (hidden iframe, no page reload)
+   - Form submission → Google Sheets via Apps Script Web App
    - iOS-style toast notifications
    ============================================================ */
 
@@ -46,7 +46,7 @@
     revealTargets.forEach((el) => el.classList.add('is-in'));
   }
 
-  /* ---------- Smooth in-page nav (also close focus) ---------- */
+  /* ---------- Smooth in-page nav ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -80,25 +80,20 @@
   }
 
   /* ============================================================
-     Google Form async submit via hidden iframe
+     Form submission → Google Sheets (Apps Script Web App)
      ------------------------------------------------------------
-     ⚠️  Замініть у index.html:
-       1) data-form-action="..." → URL вашої форми (…/formResponse)
-       2) name="entry.XXXXXXXXXX" у трьох input/textarea
+     🚩 У index.html на <form> має бути:
+        data-endpoint="https://script.google.com/macros/s/…/exec"
+     Скрипт для Apps Script — див. docs/apps-script.gs
      ============================================================ */
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
-  const hiddenFrame = document.getElementById('hiddenGoogleFrame');
 
   if (form) {
-    // Створюємо/переносимо форму на прихований iframe, щоб не було редіректу.
-    form.setAttribute('target', 'hiddenGoogleFrame');
-    form.setAttribute('method', 'POST');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    form.addEventListener('submit', (e) => {
-      const action = form.dataset.formAction || '';
-
-      // Проста валідація
+      // Валідація обовʼязкових полів
       const inputs = form.querySelectorAll('input[required], textarea[required]');
       let firstInvalid = null;
       inputs.forEach((inp) => {
@@ -107,7 +102,6 @@
         if (invalid && !firstInvalid) firstInvalid = inp;
       });
       if (firstInvalid) {
-        e.preventDefault();
         firstInvalid.focus();
         showToast({
           title: 'Заповніть, будь ласка, форму',
@@ -117,50 +111,51 @@
         return;
       }
 
-      // Якщо action ще не налаштований — зупиняємо реальний submit і повідомляємо.
-      if (!action || action.includes('REPLACE_WITH_FORM_ID')) {
-        e.preventDefault();
+      const endpoint = form.dataset.endpoint || '';
+
+      // Демо-режим, якщо endpoint ще не налаштований
+      if (!endpoint || endpoint.includes('REPLACE_WITH_APPS_SCRIPT_URL')) {
         console.warn(
-          '[Expert Clinic] Google Form action ще не налаштовано.\n' +
-          '→ Оновіть data-form-action у index.html та поля name="entry.XXX".'
+          '[Expert Clinic] Endpoint Apps Script Web App не налаштовано.\n' +
+          '→ У index.html оновіть data-endpoint="…" на URL вашого Web App.'
         );
-        // Демо-режим: імітуємо успіх, щоб UX виглядав так само.
         simulateSuccess();
         return;
       }
 
-      // Виставимо action безпосередньо перед submit
-      form.setAttribute('action', action);
-
-      // UI: показуємо спінер
       submitBtn?.classList.add('is-loading');
 
-      // hidden iframe тригерне подію load після відправки — обробимо там.
-      // (Google повертає HTML, який ми не можемо читати через CORS — це нормально.)
-      // Форма вже має target=hiddenGoogleFrame, тому браузер сам виконає submit без перезавантаження.
+      try {
+        // URLSearchParams → application/x-www-form-urlencoded — "simple" request,
+        // без preflight, працює з Google Apps Script.
+        const body = new URLSearchParams(new FormData(form));
+
+        await fetch(endpoint, {
+          method: 'POST',
+          mode: 'no-cors',      // Apps Script Web App повертає opaque response — це нормально
+          body,
+        });
+
+        // З no-cors ми не бачимо статусу відповіді; якщо fetch не кинув — вважаємо успіхом.
+        submitBtn?.classList.remove('is-loading');
+        form.reset();
+        showToast({
+          title: 'Дякуємо! Заявку прийнято.',
+          text: 'Ми звʼяжемось з вами найближчим часом.',
+        });
+      } catch (err) {
+        console.error('[Expert Clinic] Submit error:', err);
+        submitBtn?.classList.remove('is-loading');
+        showToast({
+          title: 'Не вдалось надіслати',
+          text: 'Перевірте зʼєднання і спробуйте ще раз.',
+          error: true,
+        });
+      }
     });
 
-    // Прибирати is-invalid при вводі
     form.addEventListener('input', (e) => {
       if (e.target && e.target.classList) e.target.classList.remove('is-invalid');
-    });
-  }
-
-  if (hiddenFrame) {
-    let firstLoad = true;
-    hiddenFrame.addEventListener('load', () => {
-      // Перший 'load' зазвичай спрацьовує при ініціалізації порожнього iframe — пропускаємо.
-      if (firstLoad) { firstLoad = false; return; }
-      onFormSuccess();
-    });
-  }
-
-  function onFormSuccess() {
-    submitBtn?.classList.remove('is-loading');
-    form?.reset();
-    showToast({
-      title: 'Дякуємо! Заявку прийнято.',
-      text: 'Ми звʼяжемось з вами найближчим часом.',
     });
   }
 
@@ -171,7 +166,7 @@
       form?.reset();
       showToast({
         title: 'Дякуємо! (демо)',
-        text: 'Форма ще не підключена до Google Form. Дивіться коментарі у коді.',
+        text: 'Endpoint ще не підключено. Дивіться docs/apps-script.gs.',
       });
     }, 900);
   }
