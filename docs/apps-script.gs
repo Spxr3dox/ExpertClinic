@@ -51,7 +51,26 @@ function doPost(e) {
   }
 }
 
-function doGet() {
+function doGet(e) {
+  // Відкрийте у браузері: <URL>/exec?debug=1 — побачите останні 5 записів і помилок.
+  if (e && e.parameter && e.parameter.debug) {
+    try {
+      const ss = SpreadsheetApp.openById(SHEET_ID);
+      const data = ss.getSheetByName(SHEET_NAME);
+      const errs = ss.getSheetByName(ERRORS_SHEET);
+      const dataLast = data ? data.getRange(Math.max(1, data.getLastRow() - 4), 1, Math.min(5, data.getLastRow()), 4).getValues() : [];
+      const errsLast = errs ? errs.getRange(Math.max(1, errs.getLastRow() - 4), 1, Math.min(5, errs.getLastRow()), 3).getValues() : [];
+      return json({
+        ok: true,
+        sheet_id: SHEET_ID,
+        data_sheet: SHEET_NAME,
+        data_last_rows: dataLast,
+        errors_last_rows: errsLast,
+      });
+    } catch (err) {
+      return json({ ok: false, where: 'doGet debug', error: String(err) });
+    }
+  }
   return json({ ok: true, service: 'Expert Clinic form endpoint' });
 }
 
