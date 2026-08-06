@@ -25,7 +25,7 @@
 const SHEET_ID     = '1kGuYMOE8h-fn1bqhUr2Kg0XpcwfZeVM3g9Q3N8R6Wsg';
 const SHEET_NAME   = 'ExpertClinic';   // куди пишемо заявки
 const ERRORS_SHEET = '_errors';        // сюди пишемо помилки для дебагу
-const NOTIFY_EMAIL = 'expertclinicdot@gmail.com';  // сповіщення про кожну нову заявку. '' щоб вимкнути.
+const NOTIFY_EMAIL = '';               // порожньо = не слати листи (тільки запис у таблицю)
 
 /* ---------------- Web App entrypoints ---------------- */
 
