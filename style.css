@@ -393,6 +393,7 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: 20px;
+  align-items: stretch;
 }
 .bento__hero {
   position: relative;
@@ -466,7 +467,9 @@ button { font-family: inherit; }
 .bento__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 20px;
+  height: 100%;
 }
 .bento__card {
   padding: 26px 24px 24px;
@@ -582,14 +585,17 @@ button { font-family: inherit; }
   box-shadow: 0 4px 10px rgba(20,30,60,0.08), 0 1px 2px rgba(20,30,60,0.06);
 }
 
-/* Panels */
+/* Panels — masonry via CSS columns (карти течуть без порожнеч) */
 .price-panel {
   display: none;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
   animation: priceFadeIn .4s var(--ease);
 }
-.price-panel.is-active { display: grid; }
+.price-panel.is-active {
+  display: block;
+  columns: 460px 2;         /* мін. 460 px, макс. 2 колонки */
+  column-gap: 20px;
+  column-fill: balance;
+}
 @keyframes priceFadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: none; }
@@ -599,9 +605,15 @@ button { font-family: inherit; }
   padding: 26px 28px 22px;
   border-radius: var(--radius-lg);
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-  height: fit-content;
   min-width: 0;
+  margin: 0 0 20px;
+  break-inside: avoid;
+  page-break-inside: avoid; /* legacy Firefox/Safari */
+  -webkit-column-break-inside: avoid;
+  display: inline-block;    /* критично для правильного break у деяких браузерах */
+  width: 100%;
 }
+.price-card:last-child { margin-bottom: 0; }
 .price-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .price-card__head {
   display: grid;
