@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#293F84" />
+  <meta name="description" content="Expert Clinic — медично-освітній простір: дерматологія, дерматоонкологія, трихологія, косметологія. Індивідуальний підхід та найсучасніше обладнання." />
+  <title>Expert Clinic — Dermatology · Oncology · Trichology</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="#top" class="brand" aria-label="Expert Clinic — на головну">
+        <img src="assets/logo.svg" alt="" class="brand__mark" width="44" height="36" />
+        <span class="brand__text">
+          <span class="brand__name">EXPERT CLINIC</span>
+          <span class="brand__desc">dermatology · oncology · trichology</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Головна навігація">
+        <a href="#services" class="nav__link">Послуги</a>
+        <a href="#advantages" class="nav__link">Переваги</a>
+        <a href="#doctors" class="nav__link">Лікарі</a>
+        <a href="#contact" class="nav__link">Контакти</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--primary btn--sm header__cta">Записатися</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__blob hero__blob--3"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="chip">
+            <span class="chip__dot"></span>
+            Медично-освітній простір у Києві
+          </span>
+          <h1 class="hero__title">
+            Здоровʼя вашої шкіри —<br />
+            у руках <span class="text-accent">експертів</span>.
+          </h1>
+          <p class="hero__lead">
+            Expert Clinic — це команда провідних лікарів у сферах дерматології,
+            дерматоонкології, трихології та косметології. Точна діагностика,
+            сучасне обладнання й індивідуальний підхід до кожного пацієнта.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">
+              Записатися на консультацію
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#services" class="btn btn--ghost">Наші послуги</a>
+          </div>
+
+          <ul class="hero__meta">
+            <li><strong>4</strong><span>напрямки експертизи</span></li>
+            <li><strong>10+</strong><span>років практики</span></li>
+            <li><strong>100%</strong><span>індивідуальний підхід</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__card glass">
+            <img src="assets/images/doctor-portrait.jpg" alt="Лікарка Expert Clinic з дерматоскопом" class="hero__photo" />
+            <div class="hero__badge glass">
+              <img src="assets/logo.svg" alt="" width="38" height="32" />
+              <div>
+                <p class="hero__badge-title">Expert Clinic</p>
+                <p class="hero__badge-sub">Точна діагностика</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section__head">
+          <span class="chip chip--muted">Напрямки</span>
+          <h2 class="section__title">Що ми <span class="text-accent">лікуємо</span></h2>
+          <p class="section__lead">
+            Провідні експерти у ключових медичних напрямках. Кожен випадок —
+            індивідуальний план діагностики та лікування.
+          </p>
+        </header>
+
+        <div class="cards">
+          <article class="card glass card--interactive">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                <path d="M12 3c4.5 4 7 7.5 7 11a7 7 0 0 1-14 0c0-3.5 2.5-7 7-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Дерматологія</h3>
+            <p class="card__text">
+              Діагностика й лікування захворювань шкіри, волосся та нігтів.
+              Інструментальна дерматоскопія при першому зверненні.
+            </p>
+          </article>
+
+          <article class="card glass card--interactive">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"/>
+                <path d="m20 20-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Дерматоонкологія</h3>
+            <p class="card__text">
+              Раннє виявлення новоутворень шкіри, діагностика родимок, безпечне
+              видалення та патогістологічний контроль.
+            </p>
+          </article>
+
+          <article class="card glass card--interactive">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                <path d="M4 20c1.5-6 4.5-9 8-9s6.5 3 8 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M8 11c1-3 2.5-5 4-5s3 2 4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Трихологія</h3>
+            <p class="card__text">
+              Комплексне обстеження шкіри голови й волосся, цифрова трихоскопія
+              на FotoFinder, ін'єкційні протоколи лікування.
+            </p>
+          </article>
+
+          <article class="card glass card--interactive">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Косметологія</h3>
+            <p class="card__text">
+              Медична косметологія експертного рівня: догляд, ін'єкційні методики,
+              терапія проблемної шкіри — під контролем лікаря.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ADVANTAGES ==================== -->
+    <section class="section section--tint" id="advantages">
+      <div class="container">
+        <header class="section__head">
+          <span class="chip chip--muted">Переваги</span>
+          <h2 class="section__title">Чому обирають <span class="text-accent">Expert Clinic</span></h2>
+        </header>
+
+        <div class="features">
+          <div class="feature glass">
+            <span class="feature__num">01</span>
+            <h3>Провідні експерти</h3>
+            <p>Лікарі, що постійно вдосконалюють знання й навички, — члени УАЛДВК, УАДВ, UHRS, EHRS.</p>
+          </div>
+          <div class="feature glass">
+            <span class="feature__num">02</span>
+            <h3>Сучасне обладнання</h3>
+            <p>Інструментальна дерматоскопія, цифрова трихоскопія FotoFinder, високоточна діагностика.</p>
+          </div>
+          <div class="feature glass">
+            <span class="feature__num">03</span>
+            <h3>Індивідуальний підхід</h3>
+            <p>Персональний план обстеження й лікування; супровід пацієнта на всіх етапах.</p>
+          </div>
+          <div class="feature glass">
+            <span class="feature__num">04</span>
+            <h3>Онлайн-консультації</h3>
+            <p>Первинні, повторні та післяопераційні онлайн-консультації для зручності пацієнтів.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DOCTORS ==================== -->
+    <section class="section" id="doctors">
+      <div class="container">
+        <header class="section__head">
+          <span class="chip chip--muted">Наші лікарі</span>
+          <h2 class="section__title">Команда <span class="text-accent">експертів</span></h2>
+        </header>
+
+        <div class="doctors">
+          <article class="doctor glass">
+            <div class="doctor__photo" aria-hidden="true">
+              <img src="assets/images/doctor-portrait.jpg" alt="Ірина Миколаївна Івко" />
+            </div>
+            <div class="doctor__body">
+              <h3 class="doctor__name">Ірина Миколаївна Івко</h3>
+              <p class="doctor__role">Засновниця та головний лікар Expert Clinic</p>
+              <p class="doctor__desc">
+                Лікар-дерматовенеролог вищої категорії, онколог, дерматохірург,
+                трихолог. Член УАЛДВК, УАДВ, UHRS, EHRS.
+              </p>
+              <div class="doctor__tags">
+                <span class="tag">Дерматологія</span>
+                <span class="tag">Онкологія</span>
+                <span class="tag">Трихологія</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="doctor glass">
+            <div class="doctor__photo doctor__photo--placeholder" aria-hidden="true">
+              <img src="assets/logo.svg" alt="" />
+            </div>
+            <div class="doctor__body">
+              <h3 class="doctor__name">Анастасія Олександрівна Умрихина</h3>
+              <p class="doctor__role">Лікар-дерматовенеролог, дерматохірург, трихолог, косметолог</p>
+              <p class="doctor__desc">
+                Комплексна діагностика та лікування захворювань шкіри, волосся й
+                нігтів. Медична косметологія та трихологічні протоколи.
+              </p>
+              <div class="doctor__tags">
+                <span class="tag">Дерматологія</span>
+                <span class="tag">Дерматохірургія</span>
+                <span class="tag">Косметологія</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT / FORM ==================== -->
+    <section class="section section--tint" id="contact">
+      <div class="container contact">
+        <div class="contact__intro">
+          <span class="chip chip--muted">Звʼязок</span>
+          <h2 class="section__title">Що вас <span class="text-accent">турбує?</span></h2>
+          <p class="section__lead">
+            Опишіть коротко ваш запит — ми звʼяжемось із вами найближчим часом,
+            запропонуємо зручний час консультації та лікаря відповідного профілю.
+          </p>
+
+          <ul class="contact__list">
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                <path d="M4 6.5C4 5.12 5.12 4 6.5 4h2c.86 0 1.62.55 1.9 1.37l.86 2.58a2 2 0 0 1-.5 2.06L9.4 11.4a12 12 0 0 0 3.2 3.2l1.39-1.36a2 2 0 0 1 2.06-.5l2.58.86A2 2 0 0 1 20 15.5v2c0 1.38-1.12 2.5-2.5 2.5A13.5 13.5 0 0 1 4 6.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              <a href="tel:+380663087725">+380 (66) 308-77-25</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              <a href="mailto:expertclinicdot@gmail.com">expertclinicdot@gmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <span>Київ, вул. Нагірна 8/32</span>
+            </li>
+          </ul>
+
+          <div class="contact__socials">
+            <a class="social" href="https://www.instagram.com/expert_clinic.dot" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              Instagram
+            </a>
+            <a class="social" href="https://www.facebook.com/profile.php?id=61581203133984" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M14 8h2V5h-2.5A3.5 3.5 0 0 0 10 8.5V11H8v3h2v6h3v-6h2.2l.5-3H13V9c0-.5.4-1 1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              Facebook
+            </a>
+            <a class="social" href="https://www.tiktok.com/@expert_clinic.dot_kyiv" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 4c.5 2.5 2.5 4 5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              TikTok
+            </a>
+          </div>
+        </div>
+
+        <!--
+          =======================================================================
+          GOOGLE FORM INTEGRATION
+          =======================================================================
+          1) Створіть Google Form із 3 полями: Імʼя, Контакт, Що вас турбує.
+          2) Відкрийте pre-fill link: у формі → ⋮ → Get pre-filled link.
+             Заповніть будь-яким тестовим текстом, скопіюйте посилання.
+             Ви побачите параметри виду ?entry.1234567=...&entry.7654321=...
+          3) Замініть:
+             - data-form-action  →  URL відправки форми
+               (перетворіть у ".../formResponse":
+                https://docs.google.com/forms/d/e/FORM_ID/formResponse)
+             - атрибути name="entry.XXXXXXX" у кожному <input>/<textarea>
+               відповідно до ID полів вашої Google Form.
+          =======================================================================
+        -->
+        <form
+          id="contactForm"
+          class="form glass"
+          data-form-action="https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/formResponse"
+          novalidate
+        >
+          <div class="form__row">
+            <label class="form__label" for="fName">Імʼя</label>
+            <input
+              class="form__input"
+              type="text"
+              id="fName"
+              name="entry.1111111111"
+              placeholder="Ваше імʼя"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form__row">
+            <label class="form__label" for="fContact">Контакт (телефон, Telegram або email)</label>
+            <input
+              class="form__input"
+              type="text"
+              id="fContact"
+              name="entry.2222222222"
+              placeholder="+380… / @username / you@email.com"
+              autocomplete="tel"
+              required
+            />
+          </div>
+
+          <div class="form__row">
+            <label class="form__label" for="fMessage">Що вас турбує?</label>
+            <textarea
+              class="form__input form__input--area"
+              id="fMessage"
+              name="entry.3333333333"
+              rows="4"
+              placeholder="Коротко опишіть ваш запит…"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+            <span class="btn__label">Надіслати</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+          </button>
+
+          <p class="form__hint">
+            Натискаючи «Надіслати», ви погоджуєтесь із обробкою персональних даних.
+          </p>
+        </form>
+
+        <!-- Прихований iframe для async-надсилання без перезавантаження сторінки -->
+        <iframe name="hiddenGoogleFrame" id="hiddenGoogleFrame" style="display:none" title="hidden"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="brand brand--footer">
+        <img src="assets/logo.svg" alt="" class="brand__mark" width="40" height="34" />
+        <span class="brand__text">
+          <span class="brand__name">EXPERT CLINIC</span>
+          <span class="brand__desc">dermatology · oncology · trichology</span>
+        </span>
+      </a>
+
+      <p class="footer__copy">© <span id="year"></span> Expert Clinic. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== iOS TOAST ==================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="toast__card glass">
+      <div class="toast__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+          <path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="toast__body">
+        <p class="toast__title">Дякуємо!</p>
+        <p class="toast__text">Ми звʼяжемось з вами найближчим часом.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
