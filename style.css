@@ -62,6 +62,7 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 img { max-width: 100%; display: block; }
@@ -387,21 +388,117 @@ button { font-family: inherit; }
 .card__title { font-size: 18px; margin: 0 0 8px; font-weight: 700; }
 .card__text  { margin: 0; color: var(--c-text-muted); font-size: 15px; line-height: 1.55; }
 
-/* ---------- Features ---------- */
-.features {
+/* ---------- Advantages Bento ---------- */
+.bento {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 5fr 7fr;
   gap: 20px;
 }
-.feature { padding: 26px 24px; border-radius: var(--radius-lg); }
-.feature__num {
-  display: inline-block;
-  font-size: 12px; font-weight: 700; letter-spacing: .12em;
-  color: var(--c-gray-500);
-  margin-bottom: 14px;
+.bento__hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  min-height: 460px;
+  background: linear-gradient(150deg, #22367a 0%, #1a2960 100%);
+  color: #fff;
+  box-shadow: var(--shadow);
+  isolation: isolate;
 }
-.feature h3 { margin: 0 0 8px; font-size: 18px; }
-.feature p  { margin: 0; color: var(--c-text-muted); font-size: 15px; }
+.bento__hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 25% center;
+  opacity: 0.32;
+  z-index: 0;
+}
+.bento__hero-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(600px 320px at 100% 0%, rgba(255,255,255,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(41,63,132,0.45) 0%, rgba(20,30,60,0.85) 90%);
+}
+.bento__hero-pattern {
+  position: absolute;
+  right: -20px; bottom: -20px;
+  width: 60%;
+  height: 60%;
+  z-index: 2;
+  pointer-events: none;
+}
+.bento__hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 36px 32px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  height: 100%;
+  min-height: inherit;
+}
+.bento__hero-title {
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px;
+}
+.bento__hero-lead {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.86);
+  max-width: 460px;
+}
+.chip--on-dark {
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.bento__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.bento__card {
+  padding: 26px 24px 24px;
+  border-radius: var(--radius-lg);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.bento__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.bento__illust {
+  width: 58px; height: 58px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(41,63,132,0.18) 0%, rgba(41,63,132,0.08) 100%);
+  color: var(--c-blue);
+  margin-bottom: 18px;
+}
+.bento__card h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-text);
+}
+.bento__card p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--c-text-muted);
+  line-height: 1.5;
+}
 
 /* ---------- Doctors ---------- */
 .doctors {
@@ -489,7 +586,7 @@ button { font-family: inherit; }
 .price-panel {
   display: none;
   gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
   animation: priceFadeIn .4s var(--ease);
 }
 .price-panel.is-active { display: grid; }
@@ -503,6 +600,7 @@ button { font-family: inherit; }
   border-radius: var(--radius-lg);
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
   height: fit-content;
+  min-width: 0;
 }
 .price-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .price-card__head {
@@ -760,11 +858,12 @@ button { font-family: inherit; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
-  .cards, .features { grid-template-columns: repeat(2, 1fr); }
+  .cards { grid-template-columns: repeat(2, 1fr); }
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero__visual { max-width: 460px; margin: 0 auto; }
   .doctors { grid-template-columns: 1fr; }
-  .price-panel { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: 1fr; }
+  .bento__hero { min-height: 340px; }
   .contact { grid-template-columns: 1fr; }
 }
 
@@ -777,7 +876,8 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 560px) {
-  .cards, .features { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .bento__grid { grid-template-columns: 1fr; }
   .hero__meta { gap: 22px; }
   .hero__meta strong { font-size: 22px; }
   .doctor { grid-template-columns: 1fr; }
@@ -786,6 +886,7 @@ button { font-family: inherit; }
   .header__inner { height: 60px; }
   .brand__name { font-size: 15px; letter-spacing: .14em; }
   .footer__inner { justify-content: center; text-align: center; }
+  .bento__hero-content { padding: 28px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
