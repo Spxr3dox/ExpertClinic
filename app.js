@@ -24,7 +24,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    '.hero__content, .hero__visual, .card, .feature, .doctor, .section__head, .contact__intro, .form'
+    '.hero__content, .hero__visual, .card, .feature, .doctor, .price-card, .price-tile, .section__head, .contact__intro, .form'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
 

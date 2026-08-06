@@ -51,10 +51,16 @@ function doPost(e) {
 }
 
 function doGet(e) {
-  // Відкрийте у браузері: <URL>/exec?debug=1 — побачите останні 5 записів і помилок.
+  // Відкрийте у браузері: <URL>/exec?debug=1 — побачите всі вкладки й останні записи.
   if (e && e.parameter && e.parameter.debug) {
     try {
       const ss = SpreadsheetApp.openById(SHEET_ID);
+      const all = ss.getSheets().map(s => ({
+        name: s.getName(),
+        gid: s.getSheetId(),
+        rows: s.getLastRow(),
+        url: ss.getUrl() + '#gid=' + s.getSheetId(),
+      }));
       const data = ss.getSheetByName(SHEET_NAME);
       const errs = ss.getSheetByName(ERRORS_SHEET);
       const dataLast = data ? data.getRange(Math.max(1, data.getLastRow() - 4), 1, Math.min(5, data.getLastRow()), 4).getValues() : [];
@@ -62,7 +68,9 @@ function doGet(e) {
       return json({
         ok: true,
         sheet_id: SHEET_ID,
-        data_sheet: SHEET_NAME,
+        spreadsheet_name: ss.getName(),
+        writing_to_tab: SHEET_NAME,
+        all_tabs: all,
         data_last_rows: dataLast,
         errors_last_rows: errsLast,
       });
