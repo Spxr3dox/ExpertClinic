@@ -46,6 +46,24 @@
     revealTargets.forEach((el) => el.classList.add('is-in'));
   }
 
+  /* ---------- Price tabs (iOS segmented control) ---------- */
+  const priceTabs = document.querySelectorAll('.price-tab');
+  const pricePanels = document.querySelectorAll('.price-panel');
+  function activatePriceTab(tabKey) {
+    let matched = false;
+    priceTabs.forEach((t) => {
+      const on = t.dataset.tab === tabKey;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on) matched = true;
+    });
+    pricePanels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === tabKey));
+    return matched;
+  }
+  priceTabs.forEach((t) => {
+    t.addEventListener('click', () => activatePriceTab(t.dataset.tab));
+  });
+
   /* ---------- Smooth in-page nav ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
