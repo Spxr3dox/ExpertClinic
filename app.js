@@ -24,7 +24,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    '.hero__content, .hero__visual, .card, .bento__hero, .bento__card, .doctor, .price-card, .section__head, .contact__intro, .form'
+    '.hero__content, .hero__visual, .slider, .bento__hero, .bento__card, .doctor, .price-accordion, .price-card, .section__head, .contact__intro, .form'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
 
@@ -46,23 +46,66 @@
     revealTargets.forEach((el) => el.classList.add('is-in'));
   }
 
-  /* ---------- Price tabs (iOS segmented control) ---------- */
-  const priceTabs = document.querySelectorAll('.price-tab');
-  const pricePanels = document.querySelectorAll('.price-panel');
-  function activatePriceTab(tabKey) {
-    let matched = false;
-    priceTabs.forEach((t) => {
-      const on = t.dataset.tab === tabKey;
-      t.classList.toggle('is-active', on);
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      if (on) matched = true;
+  /* ---------- Services Slider ---------- */
+  const slider = document.getElementById('servicesSlider');
+  if (slider) {
+    const track = slider.querySelector('.slider__track');
+    const slides = slider.querySelectorAll('.slide');
+    const prev = slider.querySelector('.slider__btn--prev');
+    const next = slider.querySelector('.slider__btn--next');
+    const dots = slider.querySelectorAll('.slider__dot');
+    let index = 0;
+    let autoTimer = null;
+
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, k) => d.classList.toggle('is-active', k === index));
+    }
+
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(() => go(index + 1), 6500);
+    }
+    function stopAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = null;
+    }
+
+    prev?.addEventListener('click', () => { go(index - 1); startAuto(); });
+    next?.addEventListener('click', () => { go(index + 1); startAuto(); });
+    dots.forEach((d) => d.addEventListener('click', () => {
+      go(Number(d.dataset.index)); startAuto();
+    }));
+
+    // Swipe support (touch + mouse drag)
+    let startX = 0, dx = 0, dragging = false;
+    const onDown = (x) => { dragging = true; startX = x; dx = 0; stopAuto(); };
+    const onMove = (x) => { if (dragging) dx = x - startX; };
+    const onUp = () => {
+      if (!dragging) return;
+      dragging = false;
+      if (Math.abs(dx) > 60) go(index + (dx < 0 ? 1 : -1));
+      startAuto();
+    };
+    slider.addEventListener('touchstart', (e) => onDown(e.touches[0].clientX), { passive: true });
+    slider.addEventListener('touchmove',  (e) => onMove(e.touches[0].clientX), { passive: true });
+    slider.addEventListener('touchend',   onUp);
+
+    // Пауза автогорту, коли курсор над слайдером
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+
+    // Клавіатура
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  { go(index - 1); startAuto(); }
+      if (e.key === 'ArrowRight') { go(index + 1); startAuto(); }
     });
-    pricePanels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === tabKey));
-    return matched;
+    slider.setAttribute('tabindex', '0');
+
+    go(0);
+    startAuto();
   }
-  priceTabs.forEach((t) => {
-    t.addEventListener('click', () => activatePriceTab(t.dataset.tab));
-  });
 
   /* ---------- Smooth in-page nav ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {

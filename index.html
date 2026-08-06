@@ -58,11 +58,26 @@
             Здоровʼя вашої шкіри —<br />
             у руках <span class="text-accent">експертів</span>.
           </h1>
-          <p class="hero__lead">
-            Expert Clinic — це медично-освітній простір, який обʼєднує провідних
-            експертів у ключових напрямках: <b>дерматологія, дерматоонкологія,
-            трихологія та косметологія</b>.
-          </p>
+          <div class="hero__lead">
+            <p>
+              <b>Expert Clinic</b> — це медично-освітній простір, який обʼєднує
+              провідних експертів у ключових напрямках: дерматологія,
+              дерматоонкологія, трихологія та косметологія.
+            </p>
+            <p>
+              Ми використовуємо найсучасніше обладнання, що дозволяє забезпечити
+              високоточну діагностику та ефективне лікування.
+            </p>
+            <p>
+              Наша команда складається з лікарів-експертів, які постійно
+              вдосконалюють свої знання та навички, щоб надати пацієнтам
+              найкращі медичні послуги.
+            </p>
+            <p>
+              В Expert Clinic кожен пацієнт отримує індивідуальний підхід та
+              професійну підтримку на всіх етапах лікування.
+            </p>
+          </div>
           <div class="hero__actions">
             <a href="#contact" class="btn btn--primary">
               Записатися на консультацію
@@ -95,7 +110,7 @@
       </div>
     </section>
 
-    <!-- ==================== SERVICES ==================== -->
+    <!-- ==================== SERVICES (slideshow) ==================== -->
     <section class="section" id="services">
       <div class="container">
         <header class="section__head">
@@ -107,61 +122,109 @@
           </p>
         </header>
 
-        <div class="cards">
-          <article class="card glass card--interactive">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
-                <path d="M12 3c4.5 4 7 7.5 7 11a7 7 0 0 1-14 0c0-3.5 2.5-7 7-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Дерматологія</h3>
-            <p class="card__text">
-              Діагностика й лікування захворювань шкіри, волосся та нігтів.
-              Інструментальна дерматоскопія при першому зверненні.
-            </p>
-          </article>
+        <div class="slider" id="servicesSlider" aria-roledescription="carousel">
+          <div class="slider__viewport">
+            <div class="slider__track" id="servicesTrack">
 
-          <article class="card glass card--interactive">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
-                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"/>
-                <path d="m20 20-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Дерматоонкологія</h3>
-            <p class="card__text">
-              Раннє виявлення новоутворень шкіри, діагностика родимок, безпечне
-              видалення та патогістологічний контроль.
-            </p>
-          </article>
+              <article class="slide" role="group" aria-label="1 з 4: Дерматологія">
+                <div class="slide__photo">
+                  <img src="assets/images/service-derm.jpg" alt="Дерматоскопія — огляд шкіри" loading="lazy" />
+                </div>
+                <div class="slide__body glass">
+                  <span class="chip chip--muted">01 · Напрямок</span>
+                  <h3 class="slide__title">Дерматологія</h3>
+                  <p class="slide__text">
+                    Діагностика й лікування захворювань шкіри, волосся та нігтів.
+                    Інструментальна дерматоскопія вже при першому зверненні —
+                    для точної постановки діагнозу.
+                  </p>
+                  <ul class="slide__list">
+                    <li>Огляд шкіри та інструментальна дерматоскопія</li>
+                    <li>Лікування акне, розацеа, дерматитів</li>
+                    <li>Ведення хронічних дерматозів</li>
+                  </ul>
+                </div>
+              </article>
 
-          <article class="card glass card--interactive">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
-                <path d="M4 20c1.5-6 4.5-9 8-9s6.5 3 8 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M8 11c1-3 2.5-5 4-5s3 2 4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Трихологія</h3>
-            <p class="card__text">
-              Комплексне обстеження шкіри голови й волосся, цифрова трихоскопія
-              на FotoFinder, ін'єкційні протоколи лікування.
-            </p>
-          </article>
+              <article class="slide" role="group" aria-label="2 з 4: Дерматоонкологія">
+                <div class="slide__photo">
+                  <img src="assets/images/service-onko.jpg" alt="Дерматоонкологічний огляд родимок" loading="lazy" />
+                </div>
+                <div class="slide__body glass">
+                  <span class="chip chip--muted">02 · Напрямок</span>
+                  <h3 class="slide__title">Дерматоонкологія</h3>
+                  <p class="slide__text">
+                    Раннє виявлення новоутворень шкіри, діагностика родимок,
+                    безпечне видалення та обовʼязковий патогістологічний контроль.
+                  </p>
+                  <ul class="slide__list">
+                    <li>Цифрова картографія родимок</li>
+                    <li>Хірургічне та Mohs-видалення</li>
+                    <li>Патогістологія та подальше спостереження</li>
+                  </ul>
+                </div>
+              </article>
 
-          <article class="card glass card--interactive">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
-                <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
-              </svg>
+              <article class="slide" role="group" aria-label="3 з 4: Трихологія">
+                <div class="slide__photo">
+                  <img src="assets/images/service-tricho.jpg" alt="Трихоскопія — огляд волосистої частини голови" loading="lazy" />
+                </div>
+                <div class="slide__body glass">
+                  <span class="chip chip--muted">03 · Напрямок</span>
+                  <h3 class="slide__title">Трихологія</h3>
+                  <p class="slide__text">
+                    Комплексне обстеження шкіри голови й волосся, цифрова
+                    трихоскопія FotoFinder та ін'єкційні протоколи лікування
+                    випадіння.
+                  </p>
+                  <ul class="slide__list">
+                    <li>Цифрова трихоскопія FotoFinder</li>
+                    <li>Мезотерапія, PRP, Regenera Activa</li>
+                    <li>Ведення андрогенної та вогнищевої алопеції</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="slide" role="group" aria-label="4 з 4: Косметологія">
+                <div class="slide__photo">
+                  <img src="assets/images/service-cosmet.jpg" alt="Ін'єкційна косметологічна процедура" loading="lazy" />
+                </div>
+                <div class="slide__body glass">
+                  <span class="chip chip--muted">04 · Напрямок</span>
+                  <h3 class="slide__title">Косметологія</h3>
+                  <p class="slide__text">
+                    Медична косметологія експертного рівня: догляд, ін'єкційні
+                    методики, терапія проблемної шкіри — усе під контролем
+                    лікаря-дерматолога.
+                  </p>
+                  <ul class="slide__list">
+                    <li>Ботулінотерапія, контурна пластика, філери</li>
+                    <li>Мезотерапія, біорепарація, біоремоделювання</li>
+                    <li>Апаратна косметологія: IPL, RF, RF-ліфтинг</li>
+                  </ul>
+                </div>
+              </article>
+
             </div>
-            <h3 class="card__title">Косметологія</h3>
-            <p class="card__text">
-              Медична косметологія експертного рівня: догляд, ін'єкційні методики,
-              терапія проблемної шкіри — під контролем лікаря.
-            </p>
-          </article>
+          </div>
+
+          <button class="slider__btn slider__btn--prev" type="button" aria-label="Попередній слайд">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="slider__btn slider__btn--next" type="button" aria-label="Наступний слайд">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="slider__dots" role="tablist" aria-label="Оберіть напрямок">
+            <button class="slider__dot is-active" type="button" data-index="0" aria-label="Дерматологія"></button>
+            <button class="slider__dot" type="button" data-index="1" aria-label="Дерматоонкологія"></button>
+            <button class="slider__dot" type="button" data-index="2" aria-label="Трихологія"></button>
+            <button class="slider__dot" type="button" data-index="3" aria-label="Косметологія"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -300,6 +363,61 @@
             </div>
           </article>
         </div>
+
+        <!-- Компактні картки без фото -->
+        <div class="doctors-compact">
+          <article class="doctor-mini glass">
+            <div class="doctor-mini__avatar" aria-hidden="true">ТК</div>
+            <div class="doctor-mini__body">
+              <h3 class="doctor-mini__name">Турчіна Катерина Володимирівна</h3>
+              <p class="doctor-mini__role">Лікар-косметолог</p>
+              <div class="doctor__tags">
+                <span class="tag">Косметологія</span>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-mini glass">
+            <div class="doctor-mini__avatar" aria-hidden="true">ОД</div>
+            <div class="doctor-mini__body">
+              <h3 class="doctor-mini__name">Островерха Дарʼя Володимирівна</h3>
+              <p class="doctor-mini__role">Лікар-дерматовенеролог / трихолог</p>
+              <div class="doctor__tags">
+                <span class="tag">Дерматологія</span>
+                <span class="tag">Трихологія</span>
+              </div>
+            </div>
+          </article>
+          <article class="doctor-mini glass">
+            <div class="doctor-mini__avatar" aria-hidden="true">ЗН</div>
+            <div class="doctor-mini__body">
+              <h3 class="doctor-mini__name">Зла Наталія Михайлівна</h3>
+              <p class="doctor-mini__role">Лікар-дерматолог / трихолог / косметолог</p>
+              <div class="doctor__tags">
+                <span class="tag">Дерматологія</span>
+                <span class="tag">Трихологія</span>
+                <span class="tag">Косметологія</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Блог Ірини Івко -->
+        <a class="blog-cta glass" href="https://www.instagram.com/dr.ivkoiryna" target="_blank" rel="noopener">
+          <div class="blog-cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </div>
+          <div class="blog-cta__body">
+            <span class="chip chip--muted">Instagram</span>
+            <h3 class="blog-cta__title">Власний блог Ірини Івко</h3>
+            <p class="blog-cta__text">
+              Наш головний лікар ділиться клінічними випадками, порадами та експертними
+              роздумами про дерматологію і трихологію — прямо у сторіс і публікаціях.
+            </p>
+          </div>
+          <div class="blog-cta__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -314,25 +432,22 @@
           </p>
         </header>
 
-        <div class="price-tabs" role="tablist">
-          <button class="price-tab is-active" data-tab="consult" role="tab" aria-selected="true">Консультації</button>
-          <button class="price-tab" data-tab="derm" role="tab" aria-selected="false">Дерматологія</button>
-          <button class="price-tab" data-tab="cosmet" role="tab" aria-selected="false">Косметологія</button>
-          <button class="price-tab" data-tab="tricho" role="tab" aria-selected="false">Трихологія</button>
-        </div>
+        <div class="prices-accordion">
 
-        <!-- =========== TAB 1: КОНСУЛЬТАЦІЇ =========== -->
-        <div class="price-panel is-active" data-panel="consult" role="tabpanel">
+        <h4 class="prices-group">Консультації</h4>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3c4.5 4 7 7.5 7 11a7 7 0 0 1-14 0c0-3.5 2.5-7 7-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-              </div>
-              <h3>Дерматологія / Трихологія</h3>
-              <span class="price-card__meta">Базові консультації</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3c4.5 4 7 7.5 7 11a7 7 0 0 1-14 0c0-3.5 2.5-7 7-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Дерматологія / Трихологія</span>
+      <span class="prices-accordion__meta">Базові консультації</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Консультація лікаря-дерматолога</span><span class="price-list__meta">30 хв</span></div><b>1 500 ₴</b></li>
               <li><div><span class="price-list__name">Дерматолог, повторна</span><span class="price-list__meta">протягом 3 місяців · 30 хв</span></div><b>1 200 ₴</b></li>
               <li><div><span class="price-list__name">Дерматолог-косметолог, первинна</span><span class="price-list__meta">30 хв</span></div><b>1 000 ₴</b></li>
@@ -341,18 +456,21 @@
               <li><div><span class="price-list__name">Трихолог + трихоскопія, повторна</span><span class="price-list__meta">протягом 3 місяців · 30 хв</span></div><b>1 500 ₴</b></li>
               <li><div><span class="price-list__name">Огляд / корекція лікування</span><span class="price-list__meta">можливо онлайн</span></div><b>650 ₴</b></li>
               <li><div><span class="price-list__name">Трихоскопія перед інʼєкцією</span></div><b>350 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 2 3 6v6c0 5 3.8 9.5 9 10 5.2-.5 9-5 9-10V6l-9-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-              </div>
-              <h3>Головний лікар — Івко І.М.</h3>
-              <span class="price-card__meta">Вища категорія</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 2 3 6v6c0 5 3.8 9.5 9 10 5.2-.5 9-5 9-10V6l-9-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Головний лікар — Івко І.М.</span>
+      <span class="prices-accordion__meta">Вища категорія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Дерматолог, головний лікар</span><span class="price-list__meta">40 хв</span></div><b>2 000 ₴</b></li>
               <li><div><span class="price-list__name">Дерматолог, головний лікар — повторна</span><span class="price-list__meta">3 міс. · 30 хв</span></div><b>1 700 ₴</b></li>
               <li><div><span class="price-list__name">Трихолог, головний лікар + трихоскопія FotoFinder</span><span class="price-list__meta">60 хв</span></div><b>3 000 ₴</b></li>
@@ -360,55 +478,61 @@
               <li><div><span class="price-list__name">Трихолог, головний лікар — повторна</span><span class="price-list__meta">3 міс. · 30 хв</span></div><b>2 000 ₴</b></li>
               <li><div><span class="price-list__name">Огляд / корекція лікування</span><span class="price-list__meta">можливо онлайн</span></div><b>650–1 000 ₴</b></li>
               <li><div><span class="price-list__name">Медичний супровід, відповіді на питання</span><span class="price-list__meta">протягом 1 місяця</span></div><b>1 000 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.6"/></svg>
-              </div>
-              <h3>Комбіновані консультації Івко І.М.</h3>
-              <span class="price-card__meta">Трихологія + Дерматологія</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Комбіновані консультації Івко І.М.</span>
+      <span class="prices-accordion__meta">Трихологія + Дерматологія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Комбінована консультація</span><span class="price-list__meta">80 хв</span></div><b>4 500 ₴</b></li>
               <li><div><span class="price-list__name">Комбінована консультація</span><span class="price-list__meta">60 хв</span></div><b>4 000 ₴</b></li>
               <li><div><span class="price-list__name">Комбінована консультація, повторна</span><span class="price-list__meta">40 хв</span></div><b>3 500 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-        </div>
+<h4 class="prices-group">Дерматологія</h4>
 
-        <!-- =========== TAB 2: ДЕРМАТОЛОГІЯ =========== -->
-        <div class="price-panel" data-panel="derm" role="tabpanel">
+<details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Видалення новоутворень шкіри</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
+    <li><div><span class="price-list__name">Папіломи, 1 шт (залежно від розташування)</span></div><b>200 ₴</b></li>
+    <li><div><span class="price-list__name">Папіломи, від 50 шт</span></div><b>100 ₴</b></li>
+    <li><div><span class="price-list__name">Папіломи в анатомічно складних ділянках (повіки, статеві органи), 1 шт</span></div><b>500–800 ₴</b></li>
+    <li><div><span class="price-list__name">Кератоми, ангіоми, контагіозні молюски та ін.</span></div><b>450–950 ₴</b></li>
+    <li><div><span class="price-list__name">Міліуми, 1 шт</span></div><b>350–700 ₴</b></li>
+  </ul>
+  <p class="prices-accordion__note">Інші види новоутворень потребують уточнення у дерматолога на консультації.</p></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
-              </div>
-              <h3>Видалення новоутворень шкіри</h3>
-            </header>
-            <ul class="price-list">
-              <li><div><span class="price-list__name">Папіломи, 1 шт (залежно від розташування)</span></div><b>200 ₴</b></li>
-              <li><div><span class="price-list__name">Папіломи, від 50 шт</span></div><b>100 ₴</b></li>
-              <li><div><span class="price-list__name">Папіломи в анатомічно складних ділянках (повіки, статеві органи), 1 шт</span></div><b>500–800 ₴</b></li>
-              <li><div><span class="price-list__name">Кератоми, ангіоми, контагіозні молюски та ін.</span></div><b>450–950 ₴</b></li>
-              <li><div><span class="price-list__name">Міліуми, 1 шт</span></div><b>350–700 ₴</b></li>
-            </ul>
-            <p class="price-card__note">Інші види новоутворень потребують уточнення у дерматолога на консультації.</p>
-          </article>
-
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M9 3h6l1 4h4v14H4V7h4l1-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-              </div>
-              <h3>Хірургічне видалення</h3>
-              <span class="price-card__meta">Не включає патогістологічну діагностику</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M9 3h6l1 4h4v14H4V7h4l1-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Хірургічне видалення</span>
+      <span class="prices-accordion__meta">Не включає патогістологічну діагностику</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Атерома тіла (до 1 см)</span></div><b>3 950 ₴</b></li>
               <li><div><span class="price-list__name">Атерома тіла (від 1 см)</span></div><b>5 950 ₴</b></li>
               <li><div><span class="price-list__name">Атерома голови (до 1 см)</span></div><b>5 950 ₴</b></li>
@@ -419,74 +543,84 @@
               <li><div><span class="price-list__name">Пластика ранового дефекту місцевим клаптем</span></div><b>17 950 ₴</b></li>
               <li><div><span class="price-list__name">Перевʼязка / зняття швів</span></div><b>250–650 ₴</b></li>
               <li><div><span class="price-list__name">Стріпи на ранову поверхню</span></div><b>150 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Діагностичні дослідження</h3>
-              <span class="price-card__meta">Не включає патогістологію</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Діагностичні дослідження</span>
+      <span class="prices-accordion__meta">Не включає патогістологію</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Панч-біопсія при алопеціях, 2 ділянки по 4 мм</span></div><b>3 800 ₴</b></li>
               <li><div><span class="price-list__name">Панч-біопсія шкіри при запальних дерматозах</span></div><b>3 800 ₴</b></li>
               <li><div><span class="price-list__name">Інцизійна панч-біопсія при підозрі на злоякісне н/у</span><span class="price-list__meta">залежно від розміру</span></div><b>3 800–5 950 ₴</b></li>
               <li><div><span class="price-list__name">Шейв-біопсія доброякісного н/у</span><span class="price-list__meta">залежно від типу, розміру, локалізації</span></div><b>1 400–3 550 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 20l4-4M8 16l8-8M16 8l4-4M8 20l-4-4M20 8l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Корекція шрамів</h3>
-              <span class="price-card__meta">Метод субцизії + інʼєкції</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 20l4-4M8 16l8-8M16 8l4-4M8 20l-4-4M20 8l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Корекція шрамів</span>
+      <span class="prices-accordion__meta">Метод субцизії + інʼєкції</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Субцизія атрофічних рубців, площа 2 см² / лінійний до 2 см²</span></div><b>3 000 ₴</b></li>
               <li><div><span class="price-list__name">Субцизія атрофічних рубців, площа 2–6 см²</span></div><b>8 300 ₴</b></li>
               <li><div><span class="price-list__name">Введення інʼєкції кортикостероїдів (до 10 мг)</span></div><b>2 500 ₴</b></li>
               <li><div><span class="price-list__name">Інʼєкція плазми в рубець</span></div><b>3 300 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-        </div>
+<h4 class="prices-group">Косметологія</h4>
 
-        <!-- =========== TAB 3: КОСМЕТОЛОГІЯ =========== -->
-        <div class="price-panel" data-panel="cosmet" role="tabpanel">
+<details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 2v20M4 7l16 10M20 7 4 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Ін'єкційна косметологія</span>
+      <span class="prices-accordion__meta">Біорепарація, біоремоделювання, мезотерапія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
+    <li><div><span class="price-list__name">Juvederm Volite (1 мл)</span></div><b>9 400 ₴</b></li>
+    <li><div><span class="price-list__name">Profhilo (2 мл)</span></div><b>9 400 ₴</b></li>
+    <li><div><span class="price-list__name">Jalupro (3 мл)</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Jalupro SuperHydro (2,5 мл)</span></div><b>9 600 ₴</b></li>
+    <li><div><span class="price-list__name">Jalupro Young Eye (1 мл)</span></div><b>5 700 ₴</b></li>
+    <li><div><span class="price-list__name">Rejuran Healer (2 мл)</span></div><b>7 200 ₴</b></li>
+    <li><div><span class="price-list__name">Rejuran S (1 мл)</span></div><b>5 600 ₴</b></li>
+    <li><div><span class="price-list__name">Rejuran I (1 мл)</span></div><b>5 200 ₴</b></li>
+  </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 2v20M4 7l16 10M20 7 4 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Ін'єкційна косметологія</h3>
-              <span class="price-card__meta">Біорепарація, біоремоделювання, мезотерапія</span>
-            </header>
-            <ul class="price-list">
-              <li><div><span class="price-list__name">Juvederm Volite (1 мл)</span></div><b>9 400 ₴</b></li>
-              <li><div><span class="price-list__name">Profhilo (2 мл)</span></div><b>9 400 ₴</b></li>
-              <li><div><span class="price-list__name">Jalupro (3 мл)</span></div><b>3 500 ₴</b></li>
-              <li><div><span class="price-list__name">Jalupro SuperHydro (2,5 мл)</span></div><b>9 600 ₴</b></li>
-              <li><div><span class="price-list__name">Jalupro Young Eye (1 мл)</span></div><b>5 700 ₴</b></li>
-              <li><div><span class="price-list__name">Rejuran Healer (2 мл)</span></div><b>7 200 ₴</b></li>
-              <li><div><span class="price-list__name">Rejuran S (1 мл)</span></div><b>5 600 ₴</b></li>
-              <li><div><span class="price-list__name">Rejuran I (1 мл)</span></div><b>5 200 ₴</b></li>
-            </ul>
-          </article>
-
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Мезотерапія</h3>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Мезотерапія</span>
+      
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Плазмотерапія</span></div><b>3 300 ₴</b></li>
               <li><div><span class="price-list__name">Plenhyage XL</span></div><b>6 500 ₴</b></li>
               <li><div><span class="price-list__name">Біорепарація</span></div><b>3 600–4 000 ₴</b></li>
@@ -499,17 +633,21 @@
               <li><div><span class="price-list__name">HP CELL VITARAN Tox Eye &amp; Face Collagen</span></div><b>6 500 ₴</b></li>
               <li><div><span class="price-list__name">HP CELL VITARAN Whitening &amp; Anti-Age</span></div><b>6 500 ₴</b></li>
               <li><div><span class="price-list__name">Мезококтейль Fillmed NCTF 135 HA (1.5 / 3 мл)</span></div><b>3 000 / 5 000 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Ботулінотерапія</h3>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Ботулінотерапія</span>
+      
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Корекція Full Face</span></div><b>14 500 ₴</b></li>
               <li><div><span class="price-list__name">Зона чола</span></div><b>3 300 ₴</b></li>
               <li><div><span class="price-list__name">Зона навколо очей «гусячі лапки»</span></div><b>3 400 ₴</b></li>
@@ -523,32 +661,39 @@
               <li><div><span class="price-list__name">Зона шиї (Овал Ніфертіті + платизма)</span></div><b>7 000 ₴</b></li>
               <li><div><span class="price-list__name">Зона підборіддя</span></div><b>1 100–1 600 ₴</b></li>
               <li><div><span class="price-list__name">Масетери</span></div><b>3 000–3 500 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3c2 3 3 5 3 8a3 3 0 0 1-6 0c0-3 1-5 3-8Z" stroke="currentColor" stroke-width="1.6"/><path d="M6 21c2 0 3-1 6-1s4 1 6 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Лікування гіпергідрозу</h3>
-              <span class="price-card__meta">Ботокс / Nabota</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3c2 3 3 5 3 8a3 3 0 0 1-6 0c0-3 1-5 3-8Z" stroke="currentColor" stroke-width="1.6"/><path d="M6 21c2 0 3-1 6-1s4 1 6 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Лікування гіпергідрозу</span>
+      <span class="prices-accordion__meta">Ботокс / Nabota</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">«Долоні»</span></div><b>12 000 / 8 000 ₴</b></li>
               <li><div><span class="price-list__name">«Ступні»</span></div><b>12 000 / 8 000 ₴</b></li>
               <li><div><span class="price-list__name">«Пахвові западини»</span></div><b>12 000 / 8 000 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 12s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
-              </div>
-              <h3>Контурна пластика губ</h3>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 12s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Контурна пластика губ</span>
+      
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Juvederm ultra 2 (0,55 мл)</span></div><b>5 400 ₴</b></li>
               <li><div><span class="price-list__name">Juvederm ultra smile (0,55 мл)</span></div><b>7 200 ₴</b></li>
               <li><div><span class="price-list__name">Juvederm ultra 3 (1 мл)</span></div><b>8 500 ₴</b></li>
@@ -560,18 +705,21 @@
               <li><div><span class="price-list__name">Розчинення філлеру (гіалуронідаза)</span></div><b>1 900 ₴</b></li>
               <li><div><span class="price-list__name">Бланшинг — Belotero Soft (1 мл)</span></div><b>9 000 ₴</b></li>
               <li><div><span class="price-list__name">Бланшинг — Belotero balance (1 мл)</span></div><b>9 600 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
-              </div>
-              <h3>Фотоомолодження IPL + RF</h3>
-              <span class="price-card__meta">Апаратна косметологія</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Фотоомолодження IPL + RF</span>
+      <span class="prices-accordion__meta">Апаратна косметологія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Обличчя повністю</span></div><b>3 000 ₴</b></li>
               <li><div><span class="price-list__name">Шия</span></div><b>2 500 ₴</b></li>
               <li><div><span class="price-list__name">Декольте</span></div><b>2 500 ₴</b></li>
@@ -579,18 +727,21 @@
               <li><div><span class="price-list__name">Обличчя + шия + декольте</span></div><b>6 000 ₴</b></li>
               <li><div><span class="price-list__name">Кисті рук</span></div><b>1 500 ₴</b></li>
               <li><div><span class="price-list__name">Руки повністю</span></div><b>3 000 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="7" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="8" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="16" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
-              </div>
-              <h3>Видалення пігментації</h3>
-              <span class="price-card__meta">Апаратна косметологія</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="7" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="8" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="16" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Видалення пігментації</span>
+      <span class="prices-accordion__meta">Апаратна косметологія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Обличчя</span></div><b>3 000 ₴</b></li>
               <li><div><span class="price-list__name">Щоки</span></div><b>2 500 ₴</b></li>
               <li><div><span class="price-list__name">Ніс + вилиці «метелик»</span></div><b>2 500 ₴</b></li>
@@ -599,36 +750,42 @@
               <li><div><span class="price-list__name">Декольте</span></div><b>2 500 ₴</b></li>
               <li><div><span class="price-list__name">Спина</span></div><b>4 000–4 500 ₴</b></li>
               <li><div><span class="price-list__name">Кисті рук</span></div><b>1 500 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="9" cy="10" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><circle cx="12" cy="7" r="1" fill="currentColor"/><circle cx="17" cy="9" r="1" fill="currentColor"/><circle cx="7" cy="14" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
-              </div>
-              <h3>Лікування акне / постакне / розацеа / куперозу</h3>
-              <span class="price-card__meta">Апаратна косметологія</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="9" cy="10" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><circle cx="12" cy="7" r="1" fill="currentColor"/><circle cx="17" cy="9" r="1" fill="currentColor"/><circle cx="7" cy="14" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Лікування акне / постакне / розацеа / куперозу</span>
+      <span class="prices-accordion__meta">Апаратна косметологія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Обличчя повністю</span></div><b>3 000 ₴</b></li>
               <li><div><span class="price-list__name">Щоки</span></div><b>1 500 ₴</b></li>
               <li><div><span class="price-list__name">Чоло</span></div><b>1 000 ₴</b></li>
               <li><div><span class="price-list__name">Ніс + вилиці «метелик»</span></div><b>1 500 ₴</b></li>
               <li><div><span class="price-list__name">Декольте</span></div><b>2 500 ₴</b></li>
               <li><div><span class="price-list__name">Спина</span></div><b>4 000–4 500 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M6 4v16M10 4v16M14 4v16M18 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Мікроголковий RF-ліфтинг</h3>
-              <span class="price-card__meta">Апаратна косметологія</span>
-            </header>
-            <ul class="price-list">
+          <details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M6 4v16M10 4v16M14 4v16M18 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Мікроголковий RF-ліфтинг</span>
+      <span class="prices-accordion__meta">Апаратна косметологія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
               <li><div><span class="price-list__name">Малярні мішки (окремо)</span></div><b>3 500 ₴</b></li>
               <li><div><span class="price-list__name">Очі (окремо)</span></div><b>3 500 ₴</b></li>
               <li><div><span class="price-list__name">Підщелепна зона (окремо)</span></div><b>3 500 ₴</b></li>
@@ -650,54 +807,57 @@
               <li><div><span class="price-list__name">Руки повністю</span></div><b>7 500 ₴</b></li>
               <li><div><span class="price-list__name">Пахви</span></div><b>3 500 ₴</b></li>
               <li><div><span class="price-list__name">Рубці, стрії (розтяжки)</span></div><b>3 500–10 500 ₴</b></li>
-            </ul>
-          </article>
+            </ul></div>
+</details>
 
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 7c4-4 12-4 16 0M4 12c4-4 12-4 16 0M4 17c4-4 12-4 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Чистки, маски, пілінги</h3>
-            </header>
-            <ul class="price-list">
-              <li><div><span class="price-list__name">Чистка обличчя механічна</span><span class="price-list__meta">залежно від складності</span></div><b>2 000–2 700 ₴</b></li>
-              <li><div><span class="price-list__name">Чистка спини</span><span class="price-list__meta">залежно від складності</span></div><b>2 800–3 500 ₴</b></li>
-              <li><div><span class="price-list__name">Маска по проблемі / пілінг</span></div><b>800–1 600 ₴</b></li>
-              <li><div><span class="price-list__name">Видалення міліума</span></div><b>350–750 ₴</b></li>
-            </ul>
-          </article>
+<details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 7c4-4 12-4 16 0M4 12c4-4 12-4 16 0M4 17c4-4 12-4 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Чистки, маски, пілінги</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
+    <li><div><span class="price-list__name">Чистка обличчя механічна</span><span class="price-list__meta">залежно від складності</span></div><b>2 000–2 700 ₴</b></li>
+    <li><div><span class="price-list__name">Чистка спини</span><span class="price-list__meta">залежно від складності</span></div><b>2 800–3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Маска по проблемі / пілінг</span></div><b>800–1 600 ₴</b></li>
+    <li><div><span class="price-list__name">Видалення міліума</span></div><b>350–750 ₴</b></li>
+  </ul></div>
+</details>
 
-        </div>
+<h4 class="prices-group">Трихологія</h4>
 
-        <!-- =========== TAB 4: ТРИХОЛОГІЯ =========== -->
-        <div class="price-panel" data-panel="tricho" role="tabpanel">
-
-          <article class="price-card glass">
-            <header class="price-card__head">
-              <div class="price-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 20c1.5-6 4.5-9 8-9s6.5 3 8 9M8 11c1-3 2.5-5 4-5s3 2 4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Ін'єкційна трихологія</h3>
-              <span class="price-card__meta">Мезотерапія та плазмотерапія скальпу</span>
-            </header>
-            <ul class="price-list">
-              <li><div><span class="price-list__name">Мезотерапія H-Bloom</span></div><b>4 800 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Dermaheal HL (1 мл)</span></div><b>1 300 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Good Hair hairbooster (1 мл)</span></div><b>3 500 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Good Hair PDRN</span></div><b>3 500 ₴</b></li>
-              <li><div><span class="price-list__name">Regenera Activa Hair</span></div><b>5 000 ₴</b></li>
-              <li><div><span class="price-list__name">Regenera Duta Hair (2,5 мл)</span></div><b>4 500 ₴</b></li>
-              <li><div><span class="price-list__name">Плазмотерапія Good Hair Regenera</span></div><b>3 500 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Biocascad (1 мл)</span></div><b>4 400 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Hair filler (1 мл)</span></div><b>4 800 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Plenhyage XL (1 мл)</span></div><b>6 500 ₴</b></li>
-              <li><div><span class="price-list__name">Мезотерапія Dutabiot</span></div><b>4 500 ₴</b></li>
-              <li><div><span class="price-list__name">Інʼєкція Тріамцинолону</span></div><b>2 500 ₴</b></li>
-              <li><div><span class="price-list__name">Інʼєкція IUSE Hair</span></div><b>3 000–4 500 ₴</b></li>
-              <li><div><span class="price-list__name">Pluryal Mesoline Hair (2,5 мл)</span></div><b>2 600 ₴</b></li>
-            </ul>
-          </article>
+<details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 20c1.5-6 4.5-9 8-9s6.5 3 8 9M8 11c1-3 2.5-5 4-5s3 2 4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Ін'єкційна трихологія</span>
+      <span class="prices-accordion__meta">Мезотерапія та плазмотерапія скальпу</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
+    <li><div><span class="price-list__name">Мезотерапія H-Bloom</span></div><b>4 800 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Dermaheal HL (1 мл)</span></div><b>1 300 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Good Hair hairbooster (1 мл)</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Good Hair PDRN</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Regenera Activa Hair</span></div><b>5 000 ₴</b></li>
+    <li><div><span class="price-list__name">Regenera Duta Hair (2,5 мл)</span></div><b>4 500 ₴</b></li>
+    <li><div><span class="price-list__name">Плазмотерапія Good Hair Regenera</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Biocascad (1 мл)</span></div><b>4 400 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Hair filler (1 мл)</span></div><b>4 800 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Plenhyage XL (1 мл)</span></div><b>6 500 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Dutabiot</span></div><b>4 500 ₴</b></li>
+    <li><div><span class="price-list__name">Інʼєкція Тріамцинолону</span></div><b>2 500 ₴</b></li>
+    <li><div><span class="price-list__name">Інʼєкція IUSE Hair</span></div><b>3 000–4 500 ₴</b></li>
+    <li><div><span class="price-list__name">Pluryal Mesoline Hair (2,5 мл)</span></div><b>2 600 ₴</b></li>
+  </ul></div>
+</details>
 
         </div>
 
@@ -832,16 +992,45 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#top" class="brand brand--footer">
-        <img src="assets/logo.svg" alt="" class="brand__mark" width="40" height="34" />
-        <span class="brand__text">
-          <span class="brand__name">EXPERT CLINIC</span>
-          <span class="brand__desc">dermatology · oncology · trichology</span>
-        </span>
-      </a>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#top" class="brand brand--footer">
+            <img src="assets/logo.svg" alt="" class="brand__mark" width="40" height="34" />
+            <span class="brand__text">
+              <span class="brand__name">EXPERT CLINIC</span>
+              <span class="brand__desc">dermatology · oncology · trichology</span>
+            </span>
+          </a>
+          <p class="footer__tagline">
+            Медично-освітній простір: дерматологія, дерматоонкологія,
+            трихологія та косметологія.
+          </p>
+        </div>
 
-      <p class="footer__copy">© <span id="year"></span> Expert Clinic. Усі права захищені.</p>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Контакти</h4>
+          <ul class="footer__list">
+            <li><a href="tel:+380663087725">(066) 308-77-25</a></li>
+            <li><a href="mailto:expertclinicdot@gmail.com">expertclinicdot@gmail.com</a></li>
+            <li>м. Київ, вул. Нагірна 8/32</li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Ліцензія</h4>
+          <ul class="footer__list">
+            <li>Expert Clinic</li>
+            <li>Наказ МОЗ України від 23.11.2023 №1999</li>
+            <li>Україна, м. Київ, вул. Нагірна 8/32</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        <p class="footer__copy">© <span id="year"></span> Expert Clinic. Усі права захищені.</p>
+        <p class="footer__mini">Дотримуємось конфіденційності персональних даних пацієнтів.</p>
+      </div>
     </div>
   </footer>
 
