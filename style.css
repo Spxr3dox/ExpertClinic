@@ -1302,6 +1302,39 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
+   KNOWLEDGE BASE (диагнози)
+   ============================================================ */
+.knowledge__dl {
+  margin-top: 14px;
+  display: inline-flex;
+}
+.disease {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.disease__desc {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  color: var(--c-text);
+  line-height: 1.6;
+}
+.disease__h {
+  margin: 10px 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+}
+.disease p:not(.disease__desc) {
+  margin: 0;
+  font-size: 14px;
+  color: var(--c-text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================================
    FAQ
    ============================================================ */
 .faq-wrap { max-width: 860px; }
