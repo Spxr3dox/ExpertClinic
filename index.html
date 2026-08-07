@@ -19,7 +19,7 @@
   <header class="header" id="header">
     <div class="header__inner container">
       <a href="#top" class="brand" aria-label="Expert Clinic — на головну">
-        <img src="assets/logo.svg" alt="" class="brand__mark" width="44" height="36" />
+        <img src="assets/logo-icon.png" alt="" class="brand__mark" width="50" height="34" />
         <span class="brand__text">
           <span class="brand__name">EXPERT CLINIC</span>
           <span class="brand__desc">dermatology · oncology · trichology · cosmetology</span>
@@ -105,6 +105,92 @@
                 <p class="hero__badge-title">Expert Clinic</p>
                 <p class="hero__badge-sub">Експерти, яким довіряють</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT / VIDEO ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-video">
+          <div class="about-video__player" id="clinicVideoWrap">
+            <video
+              id="clinicVideo"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/video/clinic-poster.jpg"
+              aria-label="Ознайомче відео Expert Clinic"
+            >
+              <source src="assets/video/clinic.mp4" type="video/mp4" />
+              Ваш браузер не підтримує відтворення відео.
+            </video>
+
+            <button class="video-btn video-btn--unmute" type="button" id="videoUnmuteBtn" aria-label="Увімкнути звук">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                <path d="M4 9v6h4l6 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="m17 8 5 8m0-8-5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <button class="video-btn video-btn--play" type="button" id="videoPlayBtn" aria-label="Пауза / відтворення">
+              <svg class="video-btn__icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <rect x="6"  y="4" width="4" height="16" rx="1"/>
+                <rect x="14" y="4" width="4" height="16" rx="1"/>
+              </svg>
+              <svg class="video-btn__icon-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7L8 5Z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="about-video__content">
+            <span class="chip chip--muted">Про клініку</span>
+            <h2 class="section__title section__title--left">
+              Ласкаво просимо в <span class="text-accent">Expert Clinic</span>
+            </h2>
+            <p class="about-video__lead">
+              Сучасний медично-освітній простір у Києві, де кожна деталь
+              продумана для комфорту пацієнта. Прогуляйтесь разом з нами —
+              подивіться, як влаштована наша клініка зсередини.
+            </p>
+
+            <ul class="about-video__points">
+              <li>
+                <span class="about-video__num">01</span>
+                <div>
+                  <b>Просторий hall &amp; reception</b>
+                  <span>Затишна зона очікування з фірмовим оформленням</span>
+                </div>
+              </li>
+              <li>
+                <span class="about-video__num">02</span>
+                <div>
+                  <b>Кабінети експерт-класу</b>
+                  <span>Найсучасніше обладнання для діагностики й процедур</span>
+                </div>
+              </li>
+              <li>
+                <span class="about-video__num">03</span>
+                <div>
+                  <b>Індивідуальний підхід</b>
+                  <span>Персональний план обстеження й супровід на всіх етапах</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="about-video__actions">
+              <a href="#contact" class="btn btn--primary">
+                Записатися на консультацію
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="#doctors" class="btn btn--ghost">Наші лікарі</a>
             </div>
           </div>
         </div>
@@ -316,92 +402,6 @@
               <h4>Онлайн-консультації</h4>
               <p>Первинні, повторні та післяопераційні онлайн-консультації — зручно з будь-якого міста і країни.</p>
             </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== ABOUT / VIDEO ==================== -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="about-video">
-          <div class="about-video__player" id="clinicVideoWrap">
-            <video
-              id="clinicVideo"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/video/clinic-poster.jpg"
-              aria-label="Ознайомче відео Expert Clinic"
-            >
-              <source src="assets/video/clinic.mp4" type="video/mp4" />
-              Ваш браузер не підтримує відтворення відео.
-            </video>
-
-            <button class="video-btn video-btn--unmute" type="button" id="videoUnmuteBtn" aria-label="Увімкнути звук">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
-                <path d="M4 9v6h4l6 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="m17 8 5 8m0-8-5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-            </button>
-
-            <button class="video-btn video-btn--play" type="button" id="videoPlayBtn" aria-label="Пауза / відтворення">
-              <svg class="video-btn__icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <rect x="6"  y="4" width="4" height="16" rx="1"/>
-                <rect x="14" y="4" width="4" height="16" rx="1"/>
-              </svg>
-              <svg class="video-btn__icon-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path d="M8 5v14l11-7L8 5Z"/>
-              </svg>
-            </button>
-          </div>
-
-          <div class="about-video__content">
-            <span class="chip chip--muted">Про клініку</span>
-            <h2 class="section__title section__title--left">
-              Ласкаво просимо в <span class="text-accent">Expert Clinic</span>
-            </h2>
-            <p class="about-video__lead">
-              Сучасний медично-освітній простір у Києві, де кожна деталь
-              продумана для комфорту пацієнта. Прогуляйтесь разом з нами —
-              подивіться, як влаштована наша клініка зсередини.
-            </p>
-
-            <ul class="about-video__points">
-              <li>
-                <span class="about-video__num">01</span>
-                <div>
-                  <b>Просторий hall &amp; reception</b>
-                  <span>Затишна зона очікування з фірмовим оформленням</span>
-                </div>
-              </li>
-              <li>
-                <span class="about-video__num">02</span>
-                <div>
-                  <b>Кабінети експерт-класу</b>
-                  <span>Найсучасніше обладнання для діагностики й процедур</span>
-                </div>
-              </li>
-              <li>
-                <span class="about-video__num">03</span>
-                <div>
-                  <b>Індивідуальний підхід</b>
-                  <span>Персональний план обстеження й супровід на всіх етапах</span>
-                </div>
-              </li>
-            </ul>
-
-            <div class="about-video__actions">
-              <a href="#contact" class="btn btn--primary">
-                Записатися на консультацію
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <a href="#doctors" class="btn btn--ghost">Наші лікарі</a>
-            </div>
           </div>
         </div>
       </div>
@@ -781,7 +781,38 @@
             </ul></div>
 </details>
 
-<h4 class="prices-group">Косметологія</h4>
+<h4 class="prices-group">Трихологія</h4>
+
+<details class="prices-accordion__item glass">
+  <summary class="prices-accordion__summary">
+    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 20c1.5-6 4.5-9 8-9s6.5 3 8 9M8 11c1-3 2.5-5 4-5s3 2 4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+    <span class="prices-accordion__label">
+      <span class="prices-accordion__title">Ін'єкційна трихологія</span>
+      <span class="prices-accordion__meta">Мезотерапія, плазмотерапія</span>
+    </span>
+    <span class="prices-accordion__toggle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+  </summary>
+  <div class="prices-accordion__body"><ul class="price-list">
+    <li><div><span class="price-list__name">Мезотерапія Dermaheal HL (1 мл)</span></div><b>1 300 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Good Hair hairbooster (1 мл)</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Good Hair PDRN</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Regenera Activa Hair</span></div><b>5 000 ₴</b></li>
+    <li><div><span class="price-list__name">Regenera Duta Hair (2,5 мл)</span></div><b>4 500 ₴</b></li>
+    <li><div><span class="price-list__name">Плазмотерапія Good Hair Regenera</span></div><b>3 500 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Biocascad (1 мл)</span></div><b>4 400 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Hair filler (1 мл)</span></div><b>4 800 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Plenhyage XL (1 мл)</span></div><b>6 500 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія Dutabiot</span></div><b>4 500 ₴</b></li>
+    <li><div><span class="price-list__name">Інʼєкція Тріамцинолону</span></div><b>2 500 ₴</b></li>
+    <li><div><span class="price-list__name">Інʼєкція IUSE Hair</span></div><b>3 000–4 500 ₴</b></li>
+    <li><div><span class="price-list__name">Pluryal Mesoline Hair (2,5 мл)</span></div><b>2 600 ₴</b></li>
+    <li><div><span class="price-list__name">Мезотерапія H-Bloom</span></div><b>4 800 ₴</b></li>
+  </ul></div>
+</details>
+
+        <h4 class="prices-group">Косметологія</h4>
 
 <details class="prices-accordion__item glass">
   <summary class="prices-accordion__summary">
@@ -1025,38 +1056,7 @@
   </ul></div>
 </details>
 
-<h4 class="prices-group">Трихологія</h4>
-
-<details class="prices-accordion__item glass">
-  <summary class="prices-accordion__summary">
-    <span class="prices-accordion__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 20c1.5-6 4.5-9 8-9s6.5 3 8 9M8 11c1-3 2.5-5 4-5s3 2 4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-    <span class="prices-accordion__label">
-      <span class="prices-accordion__title">Ін'єкційна трихологія</span>
-      <span class="prices-accordion__meta">Мезотерапія, плазмотерапія</span>
-    </span>
-    <span class="prices-accordion__toggle" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </span>
-  </summary>
-  <div class="prices-accordion__body"><ul class="price-list">
-    <li><div><span class="price-list__name">Мезотерапія Dermaheal HL (1 мл)</span></div><b>1 300 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія Good Hair hairbooster (1 мл)</span></div><b>3 500 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія Good Hair PDRN</span></div><b>3 500 ₴</b></li>
-    <li><div><span class="price-list__name">Regenera Activa Hair</span></div><b>5 000 ₴</b></li>
-    <li><div><span class="price-list__name">Regenera Duta Hair (2,5 мл)</span></div><b>4 500 ₴</b></li>
-    <li><div><span class="price-list__name">Плазмотерапія Good Hair Regenera</span></div><b>3 500 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія Biocascad (1 мл)</span></div><b>4 400 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія Hair filler (1 мл)</span></div><b>4 800 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія Plenhyage XL (1 мл)</span></div><b>6 500 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія Dutabiot</span></div><b>4 500 ₴</b></li>
-    <li><div><span class="price-list__name">Інʼєкція Тріамцинолону</span></div><b>2 500 ₴</b></li>
-    <li><div><span class="price-list__name">Інʼєкція IUSE Hair</span></div><b>3 000–4 500 ₴</b></li>
-    <li><div><span class="price-list__name">Pluryal Mesoline Hair (2,5 мл)</span></div><b>2 600 ₴</b></li>
-    <li><div><span class="price-list__name">Мезотерапія H-Bloom</span></div><b>4 800 ₴</b></li>
-  </ul></div>
-</details>
-
-        </div>
+</div>
 
         <p class="prices-note">
           * Ціни на 06.08.2026 можуть змінюватись — актуальну вартість підтвердить
@@ -1323,7 +1323,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="#top" class="brand brand--footer">
-            <img src="assets/logo.svg" alt="" class="brand__mark" width="40" height="34" />
+            <img src="assets/logo-icon.png" alt="" class="brand__mark" width="50" height="34" />
             <span class="brand__text">
               <span class="brand__name">EXPERT CLINIC</span>
               <span class="brand__desc">dermatology · oncology · trichology · cosmetology</span>
@@ -1348,14 +1348,17 @@
           <h4 class="footer__col-title">Ліцензія</h4>
           <ul class="footer__list footer__list--legal">
             <li>
-              <b>ТОВ «Експертний медичний центр»</b><br />
-              Наказ МОЗ України від 23.11.2023 № 1999<br />
-              Україна, м. Київ, вул. Нагірна 8/32
+              <b>ТОВ «Експертний медичний центр лікаря Івко»</b><br />
+              Заява від 19.08.2025 № 2764/0/63-25<br />
+              Юридична адреса:<br />
+              Чернігівська обл., Ніжинський р-н,<br />
+              м. Борзна, вул. Героїв Майдану, буд. 43/1<br />
+              Місце практики: м. Київ, вул. Нагірна, 8, приміщ. 32
             </li>
             <li>
-              <b>Expert Clinic</b><br />
-              Заклад від 19.09.2023 № 2764/643-23<br />
-              Україна, м. Київ, вул. Нагірна 8/32
+              <b>ФОП Івко І.М.</b><br />
+              Наказ МОЗ України від 23.11.2023 № 1999<br />
+              Україна, м. Київ, вул. Нагірна, 8, приміщ. 32
             </li>
           </ul>
         </div>
