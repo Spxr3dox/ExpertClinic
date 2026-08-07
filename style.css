@@ -655,7 +655,7 @@ button { font-family: inherit; }
   color: var(--c-gray-700);
 }
 
-/* ---------- Compact Doctors (без фото) ---------- */
+/* ---------- Compact Doctors (з фото) ---------- */
 .doctors-compact {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -663,28 +663,33 @@ button { font-family: inherit; }
   margin-top: 20px;
 }
 .doctor-mini {
-  padding: 22px 22px;
+  padding: 0;
   border-radius: var(--radius-lg);
+  overflow: hidden;
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  flex-direction: column;
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .doctor-mini:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.doctor-mini__avatar {
-  width: 48px; height: 48px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: .04em;
-  background: linear-gradient(180deg, rgba(41,63,132,0.18), rgba(41,63,132,0.06));
-  color: var(--c-blue);
+.doctor-mini__photo {
+  aspect-ratio: 4/5;
+  max-height: 300px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #eef1f7, #dfe4ee);
+  position: relative;
 }
-.doctor-mini__body { min-width: 0; flex: 1; }
+.doctor-mini__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 1.2s var(--ease-out-cubic);
+}
+.doctor-mini:hover .doctor-mini__photo img { transform: scale(1.06); }
+.doctor-mini__body {
+  padding: 18px 20px 20px;
+  min-width: 0;
+  flex: 1;
+}
 .doctor-mini__name {
   margin: 0 0 4px;
   font-size: 15.5px;
@@ -693,9 +698,10 @@ button { font-family: inherit; }
 }
 .doctor-mini__role {
   margin: 0 0 10px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--c-blue);
   font-weight: 600;
+  line-height: 1.4;
 }
 
 /* ---------- Blog CTA (Ірина Івко Instagram) ---------- */
@@ -1034,6 +1040,8 @@ button { font-family: inherit; }
 }
 .footer__list a { color: inherit; transition: color .2s; }
 .footer__list a:hover { color: var(--c-blue); }
+.footer__list--legal { gap: 14px; font-size: 12.5px; color: var(--c-gray-700); line-height: 1.5; }
+.footer__list--legal b { color: var(--c-text); font-weight: 700; font-size: 13px; }
 
 .footer__bar {
   display: flex;

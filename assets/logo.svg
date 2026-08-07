@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
-  <polygon class="logo-tri logo-tri--1" points="10,10 62,10 36,55" stroke="#293F84" stroke-width="4" stroke-linejoin="round" fill="none" pathLength="1"/>
-  <polygon class="logo-tri logo-tri--2" points="58,10 110,10 84,55" stroke="#B2B3B3" stroke-width="4" stroke-linejoin="round" fill="none" pathLength="1"/>
-  <polygon class="logo-tri logo-tri--3" points="34,90 86,90 60,45" stroke="#656A6F" stroke-width="4" stroke-linejoin="round" fill="none" pathLength="1"/>
+  <polygon class="logo-tri logo-tri--1" points="12,10 62,10 37,53" stroke="#293F84" stroke-width="5" stroke-linejoin="round" fill="none" pathLength="1"/>
+  <polygon class="logo-tri logo-tri--2" points="58,10 108,10 83,53" stroke="#B2B3B3" stroke-width="5" stroke-linejoin="round" fill="none" pathLength="1"/>
+  <polygon class="logo-tri logo-tri--3" points="35,88 85,88 60,45" stroke="#656A6F" stroke-width="5.5" stroke-linejoin="round" fill="none" pathLength="1"/>
 </svg>
