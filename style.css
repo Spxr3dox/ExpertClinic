@@ -703,6 +703,12 @@ button { font-family: inherit; }
   font-weight: 600;
   line-height: 1.4;
 }
+.doctor-mini__desc {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--c-text-muted);
+  line-height: 1.5;
+}
 
 /* ---------- Blog CTA (Ірина Івко Instagram) ---------- */
 .blog-cta {
