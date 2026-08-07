@@ -24,7 +24,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    '.slider, .bento__hero, .bento__card, .doctor, .doctor-mini, .blog-cta, .prices-accordion__item, .section__head, .contact__intro, .form, .prices-group'
+    '.slider, .bento__hero, .bento__card, .doctor, .doctor-mini, .blog-cta, .prices-accordion__item, .section__head, .contact__intro, .form, .prices-group, .equip, .review, .faq__item, .about-video__player, .about-video__content'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
 
