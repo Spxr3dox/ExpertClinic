@@ -26,10 +26,10 @@
   --c-border:      rgba(20,30,60,0.08);
   --c-border-2:    rgba(20,30,60,0.05);
 
-  --radius-sm:  12px;
-  --radius:     18px;
-  --radius-lg:  24px;
-  --radius-xl:  32px;
+  --radius-sm:  14px;
+  --radius:     20px;
+  --radius-lg:  28px;
+  --radius-xl:  36px;
 
   --shadow-sm:  0 2px 6px rgba(20,30,60,0.05);
   --shadow:     0 10px 28px rgba(20,30,60,0.08), 0 2px 6px rgba(20,30,60,0.04);
@@ -66,6 +66,16 @@ body {
 }
 
 img { max-width: 100%; display: block; }
+
+/* Усе, що має overflow-hidden контейнер із border-radius,
+   автоматично отримає округлий вигляд картинки всередині */
+.glass > img,
+.doctor__photo img,
+.doctor-mini__photo img,
+.slide__photo img,
+.hero__card img,
+.bento__hero-img,
+.about-video__player video { border-radius: inherit; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
 
@@ -124,7 +134,7 @@ button { font-family: inherit; }
   justify-content: center;
   gap: 8px;
   padding: 14px 22px;
-  border-radius: 14px;
+  border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
   font-size: 15px;
@@ -137,7 +147,7 @@ button { font-family: inherit; }
   user-select: none;
 }
 .btn:active { transform: scale(.97); }
-.btn--sm { padding: 10px 16px; font-size: 14px; border-radius: 12px; }
+.btn--sm { padding: 10px 16px; font-size: 14px; border-radius: 999px; }
 .btn--block { width: 100%; }
 
 .btn--primary {
@@ -328,7 +338,7 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border-radius: 18px;
+  border-radius: 999px;
   background: rgba(255,255,255,0.75);
 }
 .hero__badge-title { margin: 0; font-weight: 700; font-size: 14px; }
@@ -593,7 +603,7 @@ button { font-family: inherit; }
 .bento__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .bento__illust {
   width: 58px; height: 58px;
-  border-radius: 16px;
+  border-radius: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -726,7 +736,7 @@ button { font-family: inherit; }
 .blog-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .blog-cta__icon {
   width: 60px; height: 60px;
-  border-radius: 18px;
+  border-radius: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -809,7 +819,7 @@ button { font-family: inherit; }
 
 .prices-accordion__icon {
   width: 44px; height: 44px;
-  border-radius: 12px;
+  border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -926,7 +936,7 @@ button { font-family: inherit; }
 .about-video__player {
   position: relative;
   aspect-ratio: 9/16;
-  border-radius: 34px;
+  border-radius: 40px;
   overflow: hidden;
   background: #0d1122;
   box-shadow:
@@ -1009,7 +1019,7 @@ button { font-family: inherit; }
 }
 .about-video__num {
   width: 44px; height: 44px;
-  border-radius: 12px;
+  border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1099,10 +1109,10 @@ button { font-family: inherit; }
 }
 .form__input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px 18px;
   border: 1px solid var(--c-border);
   background: rgba(255,255,255,0.7);
-  border-radius: 14px;
+  border-radius: 18px;
   font: inherit;
   color: var(--c-text);
   outline: none;
@@ -1212,7 +1222,7 @@ button { font-family: inherit; }
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
-  border-radius: 20px;
+  border-radius: 999px;
   background: rgba(255,255,255,0.86);
   box-shadow: 0 22px 40px rgba(20,30,60,0.16), 0 6px 12px rgba(20,30,60,0.08);
 }
