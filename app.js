@@ -24,7 +24,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    '.slider, .bento__hero, .bento__card, .doctor, .doctor-mini, .blog-cta, .prices-accordion__item, .section__head, .contact__intro, .form, .prices-group, .equip, .faq__item, .about-video__player, .about-video__content'
+    '.slider, .bento__hero, .bento__card, .doctor, .doctor-mini, .blog-cta, .prices-accordion__item, .section__head, .contact__intro, .form, .prices-group, .equip, .faq__item, .about-video__player, .about-video__content, .stat-card, .ba-slider, .ig-tile, .ig-head'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
 
@@ -212,6 +212,41 @@
 
     go(0);
     startAuto();
+  }
+
+  /* ---------- Before / After slider ---------- */
+  const baSlider = document.getElementById('baSlider');
+  const baRange = document.getElementById('baRange');
+  if (baSlider && baRange) {
+    const setPos = (pct) => {
+      pct = Math.max(0, Math.min(100, pct));
+      baSlider.style.setProperty('--ba-pos', pct + '%');
+      baRange.value = pct;
+    };
+    baRange.addEventListener('input', () => setPos(Number(baRange.value)));
+
+    // Drag-to-move
+    let dragging = false;
+    const setFromEvent = (clientX) => {
+      const rect = baSlider.getBoundingClientRect();
+      setPos(((clientX - rect.left) / rect.width) * 100);
+    };
+    baSlider.addEventListener('mousedown', (e) => {
+      dragging = true; setFromEvent(e.clientX);
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (dragging) setFromEvent(e.clientX);
+    });
+    window.addEventListener('mouseup', () => { dragging = false; });
+
+    baSlider.addEventListener('touchstart', (e) => {
+      setFromEvent(e.touches[0].clientX);
+    }, { passive: true });
+    baSlider.addEventListener('touchmove', (e) => {
+      setFromEvent(e.touches[0].clientX);
+    }, { passive: true });
+
+    setPos(50);
   }
 
   /* ---------- Clinic video controls ---------- */
