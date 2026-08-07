@@ -1097,66 +1097,6 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
-   REVIEWS / TESTIMONIALS
-   ============================================================ */
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.review {
-  padding: 28px 26px 24px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-}
-.review:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.review__stars {
-  display: flex;
-  gap: 3px;
-  color: #f5a623;
-}
-.review__text {
-  margin: 0;
-  font-size: 15px;
-  color: var(--c-text);
-  line-height: 1.6;
-  font-style: italic;
-  font-weight: 400;
-  flex: 1;
-}
-.review__author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--c-border-2);
-}
-.review__avatar {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 13px;
-  background: linear-gradient(180deg, rgba(41,63,132,0.18), rgba(41,63,132,0.06));
-  color: var(--c-blue);
-}
-.review__name {
-  margin: 0;
-  font-size: 14.5px;
-  font-weight: 700;
-}
-.review__meta {
-  margin: 2px 0 0;
-  font-size: 12.5px;
-  color: var(--c-gray-500);
-}
-
-/* ============================================================
    FAQ
    ============================================================ */
 .faq-wrap { max-width: 860px; }
@@ -1687,7 +1627,6 @@ button { font-family: inherit; }
   .about-video { grid-template-columns: 1fr; gap: 40px; }
   .about-video__player { max-width: 340px; margin: 0 auto; }
   .equip-grid { grid-template-columns: repeat(2, 1fr); }
-  .reviews { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
