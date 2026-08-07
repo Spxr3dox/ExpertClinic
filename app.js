@@ -214,6 +214,40 @@
     startAuto();
   }
 
+  /* ---------- Clinic video controls ---------- */
+  const clinicVideo = document.getElementById('clinicVideo');
+  const clinicWrap  = document.getElementById('clinicVideoWrap');
+  const unmuteBtn   = document.getElementById('videoUnmuteBtn');
+  const playBtn     = document.getElementById('videoPlayBtn');
+
+  const iconMuted = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M4 9v6h4l6 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m17 8 5 8m0-8-5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  const iconLive  = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M4 9v6h4l6 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 9c1.5 1 1.5 5 0 6M20 6c3 2 3 10 0 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+
+  if (clinicVideo && clinicWrap) {
+    unmuteBtn?.addEventListener('click', () => {
+      clinicVideo.muted = !clinicVideo.muted;
+      unmuteBtn.setAttribute('aria-label', clinicVideo.muted ? 'Увімкнути звук' : 'Вимкнути звук');
+      unmuteBtn.innerHTML = clinicVideo.muted ? iconMuted : iconLive;
+    });
+    playBtn?.addEventListener('click', () => {
+      if (clinicVideo.paused) clinicVideo.play();
+      else                    clinicVideo.pause();
+    });
+    clinicVideo.addEventListener('play',  () => clinicWrap.classList.remove('is-paused'));
+    clinicVideo.addEventListener('pause', () => clinicWrap.classList.add('is-paused'));
+
+    // Пауза відео поза viewport (економія батареї на мобільних)
+    if ('IntersectionObserver' in window) {
+      const vio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) clinicVideo.play().catch(() => {});
+          else                  clinicVideo.pause();
+        });
+      }, { threshold: 0.25 });
+      vio.observe(clinicWrap);
+    }
+  }
+
   /* ---------- Smooth in-page nav ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {

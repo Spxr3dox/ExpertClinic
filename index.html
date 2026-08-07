@@ -29,6 +29,7 @@
       <nav class="nav" aria-label="Головна навігація">
         <a href="#services" class="nav__link">Послуги</a>
         <a href="#advantages" class="nav__link">Переваги</a>
+        <a href="#about" class="nav__link">Про клініку</a>
         <a href="#doctors" class="nav__link">Лікарі</a>
         <a href="#prices" class="nav__link">Прайс</a>
         <a href="#contact" class="nav__link">Контакти</a>
@@ -315,6 +316,92 @@
               <h4>Онлайн-консультації</h4>
               <p>Первинні, повторні та післяопераційні онлайн-консультації — зручно з будь-якого міста і країни.</p>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT / VIDEO ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-video">
+          <div class="about-video__player" id="clinicVideoWrap">
+            <video
+              id="clinicVideo"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/video/clinic-poster.jpg"
+              aria-label="Ознайомче відео Expert Clinic"
+            >
+              <source src="assets/video/clinic.mp4" type="video/mp4" />
+              Ваш браузер не підтримує відтворення відео.
+            </video>
+
+            <button class="video-btn video-btn--unmute" type="button" id="videoUnmuteBtn" aria-label="Увімкнути звук">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                <path d="M4 9v6h4l6 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="m17 8 5 8m0-8-5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <button class="video-btn video-btn--play" type="button" id="videoPlayBtn" aria-label="Пауза / відтворення">
+              <svg class="video-btn__icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <rect x="6"  y="4" width="4" height="16" rx="1"/>
+                <rect x="14" y="4" width="4" height="16" rx="1"/>
+              </svg>
+              <svg class="video-btn__icon-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7L8 5Z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="about-video__content">
+            <span class="chip chip--muted">Про клініку</span>
+            <h2 class="section__title section__title--left">
+              Ласкаво просимо в <span class="text-accent">Expert Clinic</span>
+            </h2>
+            <p class="about-video__lead">
+              Сучасний медично-освітній простір у Києві, де кожна деталь
+              продумана для комфорту пацієнта. Прогуляйтесь разом з нами —
+              подивіться, як влаштована наша клініка зсередини.
+            </p>
+
+            <ul class="about-video__points">
+              <li>
+                <span class="about-video__num">01</span>
+                <div>
+                  <b>Просторий hall &amp; reception</b>
+                  <span>Затишна зона очікування з фірмовим оформленням</span>
+                </div>
+              </li>
+              <li>
+                <span class="about-video__num">02</span>
+                <div>
+                  <b>Кабінети експерт-класу</b>
+                  <span>Найсучасніше обладнання для діагностики й процедур</span>
+                </div>
+              </li>
+              <li>
+                <span class="about-video__num">03</span>
+                <div>
+                  <b>Індивідуальний підхід</b>
+                  <span>Персональний план обстеження й супровід на всіх етапах</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="about-video__actions">
+              <a href="#contact" class="btn btn--primary">
+                Записатися на консультацію
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="#doctors" class="btn btn--ghost">Наші лікарі</a>
+            </div>
           </div>
         </div>
       </div>
