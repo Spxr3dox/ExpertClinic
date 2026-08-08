@@ -1,0 +1,27 @@
+{
+  "name": "Expert Clinic — Дерматологія · Онкологія · Трихологія · Косметологія",
+  "short_name": "Expert Clinic",
+  "description": "Медично-освітній простір у Києві: експертна дерматологія, дерматоонкологія, трихологія та косметологія.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f7fb",
+  "theme_color": "#293F84",
+  "lang": "uk-UA",
+  "categories": ["medical", "health", "beauty"],
+  "icons": [
+    {
+      "src": "assets/logo-icon.png",
+      "sizes": "440x280",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

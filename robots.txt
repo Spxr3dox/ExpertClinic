@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /assets/docs/
+
+# Sitemap для пошукових ботів
+Sitemap: https://expert-clinic-eight.vercel.app/sitemap.xml
+
+# Швидкий crawl для Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
