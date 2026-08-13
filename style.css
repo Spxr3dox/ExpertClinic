@@ -201,8 +201,9 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 12px;
   height: 68px;
+  min-width: 0;
 }
 
 .brand {
@@ -228,21 +229,25 @@ button { font-family: inherit; }
 .nav {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px;
+  gap: 2px;
+  padding: 5px;
   border-radius: 999px;
   background: var(--c-surface-2);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
   border: 1px solid var(--c-border-2);
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 .nav__link {
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--c-gray-700);
   transition: background .2s var(--ease), color .2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav__link:hover { background: rgba(41,63,132,0.08); color: var(--c-blue); }
 
@@ -1867,6 +1872,10 @@ button { font-family: inherit; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+/* Nav ховається раніше — 8 пунктів не вміщується у вужче за 1180px */
+@media (max-width: 1180px) {
+  .nav__link { padding: 7px 10px; font-size: 13px; }
+}
 @media (max-width: 1024px) {
   .slide { grid-template-columns: 1fr; }
   .slide__photo { min-height: 280px; }
