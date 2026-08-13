@@ -247,6 +247,23 @@
     }, { passive: true });
 
     setPos(50);
+
+    // Case switcher
+    const caseBtns = document.querySelectorAll('.ba-case');
+    const baBefore = document.getElementById('baBefore');
+    const baAfter  = document.getElementById('baAfter');
+    caseBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const c = btn.dataset.case;
+        caseBtns.forEach((b) => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+        if (baBefore) baBefore.src = `assets/images/ba-${c}-before.jpg`;
+        if (baAfter)  baAfter.src  = `assets/images/ba-${c}-after.jpg`;
+        setPos(50);
+      });
+    });
   }
 
   /* ---------- Clinic video controls ---------- */

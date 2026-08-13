@@ -1317,22 +1317,22 @@
           <span class="chip chip--muted">Результати</span>
           <h2 class="section__title">До <span class="text-accent">і</span> після</h2>
           <p class="section__lead">
-            Приклад видалення новоутворення шкіри — з дозволу пацієнтки.
-            Перетягніть смугу, щоб побачити різницю.
+            Реальні результати наших пацієнтів — з їхнього дозволу. Перетягніть
+            смугу, щоб побачити різницю. Оберіть інший випадок, щоб подивитись
+            інші історії.
           </p>
         </header>
 
         <!--
-          Фото: реальне до/після видалення новоутворення на переніссі
-          (IMG_3751 / IMG_3752), із дозволу пацієнтки. Приведено до
-          однакового розміру 720×1000, центр по обличчю.
+          Реальні до/після пацієнтів клініки (з письмової згоди).
+          Файли ba-{1..4}-{before,after}.jpg — 720×1000, центр по обличчю.
         -->
-        <div class="ba-slider" id="baSlider">
-          <img class="ba-slider__img ba-slider__img--after"
-               src="assets/images/ba-after.jpg"
+        <div class="ba-slider" id="baSlider" data-case="1">
+          <img class="ba-slider__img ba-slider__img--after" id="baAfter"
+               src="assets/images/ba-1-after.jpg"
                alt="Після процедури" />
-          <img class="ba-slider__img ba-slider__img--before"
-               src="assets/images/ba-before.jpg"
+          <img class="ba-slider__img ba-slider__img--before" id="baBefore"
+               src="assets/images/ba-1-before.jpg"
                alt="До процедури" />
 
           <div class="ba-slider__handle" id="baHandle" aria-hidden="true">
@@ -1349,6 +1349,38 @@
           <input type="range" min="0" max="100" value="50"
                  class="ba-slider__range" id="baRange"
                  aria-label="Порівняти до і після" />
+        </div>
+
+        <!-- Перемикач випадків -->
+        <div class="ba-cases" role="tablist" aria-label="Оберіть випадок">
+          <button type="button" class="ba-case is-active" data-case="1" role="tab" aria-selected="true">
+            <img src="assets/images/ba-1-before.jpg" alt="Випадок 1 — лікування акне" loading="lazy" />
+            <span class="ba-case__label">
+              <b>Випадок 1</b>
+              <span>Лікування акне · щока</span>
+            </span>
+          </button>
+          <button type="button" class="ba-case" data-case="2" role="tab" aria-selected="false">
+            <img src="assets/images/ba-2-before.jpg" alt="Випадок 2 — лікування акне" loading="lazy" />
+            <span class="ba-case__label">
+              <b>Випадок 2</b>
+              <span>Лікування акне · бічний ракурс</span>
+            </span>
+          </button>
+          <button type="button" class="ba-case" data-case="3" role="tab" aria-selected="false">
+            <img src="assets/images/ba-3-before.jpg" alt="Випадок 3 — акне + пігментація" loading="lazy" />
+            <span class="ba-case__label">
+              <b>Випадок 3</b>
+              <span>Акне · пігментація постакне</span>
+            </span>
+          </button>
+          <button type="button" class="ba-case" data-case="4" role="tab" aria-selected="false">
+            <img src="assets/images/ba-4-before.jpg" alt="Випадок 4 — тяжке акне" loading="lazy" />
+            <span class="ba-case__label">
+              <b>Випадок 4</b>
+              <span>Тяжке акне · зона підборіддя</span>
+            </span>
+          </button>
         </div>
 
         <p class="prices-note">

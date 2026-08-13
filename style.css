@@ -1051,6 +1051,62 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
+   BEFORE / AFTER — case switcher
+   ============================================================ */
+.ba-cases {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 960px;
+  margin: 24px auto 0;
+}
+.ba-case {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px 8px 8px;
+  border-radius: var(--radius);
+  border: 2px solid var(--c-border-2);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: var(--blur);
+  cursor: pointer;
+  text-align: left;
+  transition: transform .2s var(--ease), border-color .2s, box-shadow .3s;
+}
+.ba-case:hover {
+  transform: translateY(-2px);
+  border-color: rgba(41,63,132,0.35);
+  box-shadow: var(--shadow);
+}
+.ba-case.is-active {
+  border-color: var(--c-blue);
+  box-shadow: 0 8px 20px rgba(41,63,132,0.20);
+}
+.ba-case img {
+  width: 62px; height: 62px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.ba-case__label {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ba-case__label b {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-text);
+}
+.ba-case__label span {
+  font-size: 11.5px;
+  color: var(--c-gray-700);
+  line-height: 1.35;
+}
+
+/* ============================================================
    INSTAGRAM FEED
    ============================================================ */
 .ig-head {
@@ -1886,6 +1942,7 @@ button { font-family: inherit; }
   .stats-band__grid { grid-template-columns: repeat(3, 1fr); }
   .ig-grid { grid-template-columns: repeat(3, 1fr); }
   .ig-head { flex-direction: column; align-items: flex-start; }
+  .ba-cases { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
@@ -1910,6 +1967,7 @@ button { font-family: inherit; }
   .slide__body { padding: 24px 20px; }
   .slide__photo { min-height: 0; aspect-ratio: 4/5; }
   .equip-grid { grid-template-columns: 1fr; }
+  .ba-cases { grid-template-columns: 1fr; }
   .stats-band__grid { grid-template-columns: repeat(2, 1fr); }
   .stat-card:last-child { grid-column: span 2; }
   .ig-grid { grid-template-columns: repeat(2, 1fr); }
