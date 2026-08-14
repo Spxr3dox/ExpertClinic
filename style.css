@@ -673,7 +673,7 @@ button { font-family: inherit; }
 /* ---------- Compact Doctors (з фото) ---------- */
 .doctors-compact {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 20px;
 }
@@ -1055,9 +1055,9 @@ button { font-family: inherit; }
    ============================================================ */
 .ba-cases {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  max-width: 960px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  max-width: 1080px;
   margin: 24px auto 0;
 }
 .ba-case {
@@ -1946,7 +1946,7 @@ button { font-family: inherit; }
   .stats-band__grid { grid-template-columns: repeat(3, 1fr); }
   .ig-grid { grid-template-columns: repeat(3, 1fr); }
   .ig-head { flex-direction: column; align-items: flex-start; }
-  .ba-cases { grid-template-columns: repeat(2, 1fr); }
+  .ba-cases { grid-template-columns: repeat(3, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
