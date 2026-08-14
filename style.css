@@ -1463,7 +1463,11 @@ button { font-family: inherit; }
   line-height: 1.65;
   color: var(--c-text-muted);
 }
-.faq__body p { margin: 0; }
+.faq__body p { margin: 0 0 10px; }
+.faq__body p:last-child { margin-bottom: 0; }
+.faq__body ul { margin: 6px 0 12px; padding-left: 22px; }
+.faq__body ul li { margin-bottom: 4px; }
+.faq__body b { color: var(--c-text); }
 .faq__body a { color: var(--c-blue); font-weight: 600; }
 .faq__body a:hover { text-decoration: underline; }
 
