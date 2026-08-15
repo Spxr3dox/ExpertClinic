@@ -12,16 +12,16 @@
   "categories": ["medical", "health", "beauty"],
   "icons": [
     {
-      "src": "assets/logo-icon.png",
-      "sizes": "440x280",
+      "src": "assets/favicon.png",
+      "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "assets/logo-icon.png",
+      "sizes": "660x520",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
